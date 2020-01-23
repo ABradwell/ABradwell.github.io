@@ -4,148 +4,8 @@
 <html>
 	<head>
 		<meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
-		<style>
-			body{
-				  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Resources/automated_creatures/background.png);
-				 background-position: center;
-				  background-repeat: repeat-y;
-				  background-size: cover;
-				  position: relative;
-				 padding-left: 25px;
-				 padding-right: 25px;
-				 text-align: left;
-				 margin: 0 auto;
-			}h1 {
-				color:white;
-				font-family: Arial, Helvetica, serif;
-				font-size: 20px;
-				line-height: 10px;
-			} h3 {
-				color:white;
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: 15px;
-				padding: 0px, 0px;
-				line-height: 19px;
-			} p {
-				font-family: Arial, Helvetica, sans-serif;
-				color:white;
-				font-size: 15px ;
-
-			} p.buttonHolder {
-				color:white;
-				width = window.innerWidth;
-				padding: 5px 5px;
-				font-size:25px;
-				text-align:center;
-				overflow: auto;
-
-			}a.buttons {
-				color:black;
-				background-color:hsla(17, 100%, 75%, 1);
-				text-align: center;
-				margin:5px;
-				padding:5px 10px;
-				border-radius: 12px;
-				box-shadow: 0 5px #999;
-				float:left;
-				text-decoration: none;
-				outline: none;
-
-			}a.buttons:hover {
-			  background-color:hsla(17, 100%, 43%, 1)
-			  color: black;
-			}a.buttons:active {
-			  background-color: hsla(20, 100%, 70%, 1); 
-			  box-shadow: 0 1px #999; 
-			  transform: translateX(1px);
-			  transform: translateY(4px);
-			  color: black;
-			}
-
-			a.featbuttons {
-				color: white;
-				background-color: red;
-				text-align: center;
-				margin:5px;
-				padding:5px 10px;
-				border-radius: 13px;
-				box-shadow: 0 9px #999;
-				float:center;
-				text-decoration: none;
-				outline: none;
-
-			}a.featbuttons:hover {
-			  background-color: red;
-			  color: black;
-			}a.featbuttons:active {
-			  background-color: red;
-			  color: black;
-			  box-shadow: 0 1px #999; 
-			  transform: translateX(1px);
-			  transform: translateY(8px);
-			  color: white;
-			}
-
-
-
-
-
-			  div.content {
-				border:2px solid black;
-				background-color:hsla(20, 100%, 59%, 1);
-				padding-left: 40px;
-				padding-right: 25px;
-			} div.header {
-				border:4px solid black;
-				background-color:hsla(20, 100%, 59%, 1);
-				height:160px;
-				max-width:650px;
-				margin: 0 auto;
-				/*overflow: auto;*/
-			} div.projects {
-				margin: 0 auto;
-				border: double black;
-				padding: 45px;
-				background-color: rgba(600,600,600, 0.3);
-				max-width: 1000px;
-			}div.node {
-				display: inline-block;
-				color:white;
-				width:300px;
-				height:100px;
-				margin: 5%;
-				border:3px solid black;
-				border-radius: 12px;
-
-			}.row:after {
-				text-align: center;
-				clear:both;
-				display:table;
-				margin: 0 auto;
-				width: window.innerWidth -100;
-			} img.profileImage {
-				max-height: 160px;
-				overflow: auto;
-			} img.contentImage {
-				height:250px;
-				float:left;
-				margin-right: 15px;
-				margin-left: 15px;
-				overflow: auto;
-			} img.icon {
-				height: 100px;
-				width: 100px;
-				float:left;
-			} .OverView {
-				background-color: white;
-				padding: 15px;
-				border-radius: 12px;
-				height:250px;
-				max-width:650px;
-				margin: 0 auto;
-			}
-
-		</style>
+		<link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
+		<style> body{ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Resources/automated_creatures/background.png);}</style>
 			<div class = "header">
 						<a href = "index.html" style="float:left;"> <img src = "Resources/profile.png" class = "profileImage"> </a> 
 						<h1 style = "max-width: 100%; text-align: center;"> Aiden Stevenson Bradwell </h1>
@@ -171,7 +31,7 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView"  style = "background-color: violet">
+			<div class = "OverView"  style = "background-color: lightblue">
 				<img src = "Resources/automated_creatures/menu.png" class = "contentImage">
 				<h1 style = "color:black"> Menu System </h1>
 				<p style = "color:black"> Designed using click-fields hard coded into the graphics. Each click returns an (x,y) point which is then analyzed to determine if it was within a field. Each click leaves a crosshair on the background, to confirm that while the click did not activate the program, it was received. <br><br> The ratio determines the # of cubes placed on the screen, resulting in smaller cubes the higher larger the selected map. </p>
@@ -180,7 +40,7 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView" style = "background-color: dodgerblue">
+			<div class = "OverView" style = "background-color: seagreen">
 				<img src = "Resources/automated_creatures/map_arrows.png" class = "contentImage" style = "float:right" >
 				<h1> Map Generation </h1>
 				<p> The map generator algorithm fills the map from left to right, using its knowledge of the surrounding map-pieces to create land masses, instead of a map of small and isolated slivers of land. This allows for the animal to traverse the land, and creates a more visually appealing map. <br><br> The map always fills the same window size, but adjusts the cube-size to fill with the requested number of pieces. The odds of placing a piece which is harmonious with its' surrounding pieces is significantly higher than the odds of it placing a non-homogenous piece.  </p>
@@ -188,7 +48,7 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView" style = "background-color: orange">
+			<div class = "OverView" style = "background-color: lightblue">
 				<img src = "Resources/automated_creatures/map_animal.png" class = "contentImage" >
 				<h1 style = "color:black"> Animal Spawning </h1>
 				<p style = "color:black"> The program finally spawns a creature to roam the map, with the creature’s size being comparative to the map’s cube sizes. The creature is a random walker, staying on the land pieces and avoiding the water. It has a tendency to walk upwards. On to better things, I guess! </p>
@@ -197,12 +57,13 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "buttonHolder" style = "text-align: center; width:100%">
-				<a class = "featbuttons" href= "https://github.com/ABradwell/Portfolio/tree/master/Automated%20Life" style = "text-align: center; width: 1000px"> Github Repository </a>
-			</div>
-
-
 		</div>
 	</body>
+	<footer> <br> <br> <br> <div class = "referenceBank">
+			<a class = "referenceButton" href = "https://github.com/ABradwell"> GitHub </a>
+			<a class = "referenceButton" href = ""> LinkedIn </a>
+			<a class = "referenceButton" href = ""> HackerRank </a>
+			<a class = "referenceButton" href = ""> LeetCode </a>
+		</div> <br> <br> <br> </footer>
 
 

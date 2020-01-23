@@ -4,100 +4,8 @@
 <html>
 	<head>
 		<meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
-		<style>
-			body{
-				 background-color: 
-				 background-attachment: fixed;
-				 padding-left: 25px;
-				 padding-right: 25px;
-				 text-align: center;
-				 margin: 0 auto;
-			}h1 {
-				color:white;
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: 20px;
-				line-height: 10px;
-			} h3 {
-				color:white;
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: 15px;
-				padding: 0px, 0px;
-				line-height: 19px;
-			} p {
-				font-family: Arial, Helvetica, sans-serif;
-				color:white;
-				font-size: 15px ;
-
-			} p.buttonHolder {
-				color:white;
-				width = window.innerWidth;
-				padding: 5px 5px;
-				font-size:25px;
-				text-align:center;
-				overflow: auto;
-
-			}a.buttons {
-				color:black;
-				background-color:hsla(17, 100%, 75%, 1);
-				text-align: center;
-				margin:5px;
-				padding:5px 10px;
-				border-radius: 12px;
-				box-shadow: 0 5px #999;
-				float:left;
-				text-decoration: none;
-				outline: none;
-
-			}a.buttons:hover {
-			  background-color:hsla(17, 100%, 43%, 1)
-			  color: white;
-			}a.buttons:active {
-			  background-color: hsla(20, 100%, 70%, 1); 
-			  box-shadow: 0 1px #999; 
-			  transform: translateX(1px);
-			  transform: translateY(4px);
-			  color: white;
-			}  div.content {
-				border:2px solid black;
-				background-color:hsla(20, 100%, 59%, 1);
-				padding-left: 40px;
-				padding-right: 25px;
-			} div.header {
-				border:4px solid black;
-				background-color:hsla(20, 100%, 59%, 1);
-				height:160px;
-				max-width:650px;
-				margin: 0 auto;
-				/*overflow: auto;*/
-			} div.projects {
-				margin: 0 auto;
-				border: double black;
-				padding: 45px;
-			}div.node {
-				display: inline-block;
-				color:white;
-				width:300px;
-				height:100px;
-				margin: 5%;
-				border:3px solid black;
-				border-radius: 12px;
-
-			}.row:after {
-				text-align: center;
-				clear:both;
-				display:table;
-				margin: 0 auto;
-				width: window.innerWidth -100;
-			} img.profileImage {
-				max-height: 160px;
-				overflow: auto;
-			} img.icon {
-				height: 100px;
-				width: 100px;
-				float:left;
-			}
-
-		</style>
+			<link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
+			<style> body{background-color: white}</style>
 			<div class = "header">
 						<a href = "index.html" style="float:left;"> <img src = "Resources/profile.png" class = "profileImage"> </a> 
 						<h1 style = "max-width: 100%; text-align: center;"> Aiden Stevenson Bradwell </h1>
@@ -116,14 +24,14 @@
 	</head>
 
 	<body>
-		<div class = "projects">
+		<div class = "projects" style= "text-align: center">
 			<div class = "row">
 				<div class = "node" style = "background-color: mediumseagreen">
 					<a href = "automated_creatures.html"> <img src = "Resources/ai_icon.png" class = "icon"> 
 						<h1 style = "line-height: 35px"> Automated Creature Project (Python) </h1>
 					</a>
 				</div>
-				<div class = "node" style = "background-color: violet">
+				<div class = "node" style = "background-color: darkred">
 					<a href = "WalkinClinic.html"> <img src = "Resources/android_icon.png" class = "icon"> 
 						<h1 style = "line-height: 35px"> Walk-In Clinic App (Android) </h1>
 					</a>
@@ -136,10 +44,18 @@
 					</a>
 				</div>
 				<div class = "node" style = "background-color: orange">
-					<a href = "index.html"> <img src = "Resources/books_icon.png" class = "icon"> 
+					<a href = "https://github.com/ABradwell/Portfolio"> <img src = "Resources/books_icon.png" class = "icon"> 
 						<h1 style = "line-height: 35px"> Class Assignments (Multi-Language) </h1>
 					</a>
 				</div>
 			</div>
+		</div>
+
 	</body>
+	<footer> <br> <br> <br> <div class = "referenceBank">
+			<a class = "referenceButton" href = "https://github.com/ABradwell"> GitHub </a>
+			<a class = "referenceButton" href = ""> LinkedIn </a>
+			<a class = "referenceButton" href = ""> HackerRank </a>
+			<a class = "referenceButton" href = ""> LeetCode </a>
+		</div> <br> <br> <br> </footer>
 </html>
