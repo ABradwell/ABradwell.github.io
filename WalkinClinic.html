@@ -5,36 +5,38 @@
 	<head>
 		<meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
-		<<style> body{ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Resources/Android/background.png);}</style>
-						<div class = "header">
-						<a href = "index.html" style="float:left;"> <img src = "Resources/profile.png" class = "profileImage"> </a> 
-						<h1 style = "max-width: 100%; text-align: center;"> Aiden Stevenson Bradwell </h1>
-						<h3 style = "max-width: 100%;  text-align: center;"> University of Ottawa, 2nd Year <br>
-				 		BSc Major in Computer Science, Major in Psychology </h3>
-			<p class = "buttonHolder"> 
-				<a class = "buttons" href= "index.html"> About Me </a>
-				<a class = "buttons" href= "index.html"> Contact </a>
-				<a class = "buttons" href= "index.html"> Projects </a>
+		<style> body{ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Resources/Android/background.png);}</style>
+		<div class = "headerHolder">
+				<img src = "Resources/profile.png" class = "headericon" style = "margin-right: 15px">
 				<br>
-			</p>
-			</div>
-			<br><br><br>
+				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px"> Aiden Stevenson Bradwell </h1>
+				<h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px"> University of Ottawa, Ontario, Canada</h3> <h3 style = " margin-top: 0px;margin-left: : 50px"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
+				<div class = "headerbuttonholder">
+					<a class = "headerbutton" href = "index.html"> Home </a>
+					<a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a>
+					<a class = "headerbutton" href = "WalkinClinic.html"> Android App </a>
+					<a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a>
+					<a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a>
+					<a class = "headerbutton" href = "resumes.html"> Resumes </a>
+					<a class = "headerbutton" href = ""> Contact </a>
+				</div>
+			</div><br><br>
 	</head>
 	<body>
 		<div class = "projects">
-			<div class = "OverView" style = "background-color: darkred">
-				<h1>A Fully Connected Patient Booking System</h1>
-				<h3> <b>Created: <ul> <li> Aiden Bradwell</li><li>Logan Rose </li><li>John Brar</li><li>Lillian Ly</li><li>Tanner Buchannan </li></ul></b> Fall 2019 <br> <b>Software Used: Android Studio, Firebase Authentication, Firebase Databases</b> </h3>
+			<div class = "OverView" style = "background-color: teal;">
+				<h1 style = "color:white">A Fully Connected Patient Booking System</h1>
+				<h3 style = "color:white"> <b>Created: <ul> <li> Aiden Bradwell</li><li>Logan Rose </li><li>John Brar</li><li>Lillian Ly</li><li>Tanner Buchannan </li></ul></b> Fall 2019 <br> <b>Software Used: Android Studio, Firebase Authentication, Firebase Databases</b> </h3>
 				<p style = "color:white"> Including 3 account types, each being authenticated upon creation to have a proper username and password, this app allows a range of functionality. Clinics can create their account, advertise what they offer, and open slots for patients to book. Patients can log in, search for clinics by name or service, book appointments, and leave ratings. Admins can choose which services are possible to offer, delete accounts, and control the overall network [1 admin account]. </p>
 
 			</div>
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView"  style = "background-color: darkorange">
+			<div class = "OverView"  style = "background-color: darkcyan">
 				<img src = "Resources/Android/ss_database.png" class = "contentImage">
-				<h1 style = "color:black">Firebase Authentication & Storage</h1>
-				<p style = "color:black"> Each login is authenticated through the FireStone FireBase Authentication System, which affirms that an entered email is valid, and then creates a registered account attached to it. The data for these accounts, as well as for all attributes of the app, are then stored in a custom database system.
+				<h1 style = "color:white">Firebase Authentication & Storage</h1>
+				<p style = "color:white"> Each login is authenticated through the FireStone FireBase Authentication System, which affirms that an entered email is valid, and then creates a registered account attached to it. The data for these accounts, as well as for all attributes of the app, are then stored in a custom database system.
 				<b>Skills Used:</b> Authentication Implementation, App Design, Android Studio, Database Design and Implementation
 				 </p>
 
@@ -42,15 +44,15 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView" style = "background-color: darkred">
+			<div class = "OverView" style = "background-color: lightseagreen">
 				<img src = "Resources/Android/ss_admin.png" class = "contentImage" style = "float:right" >
 				<h1>Admin Functionality</h1>
-				<p style = "color:white"> With an immutable admin account, the application allows for one to remove or add potential services, as well as manage and remove users from the database. It includes an updated list of all Users and Clinics, taken from the online database system </p>
+				<p style = "color:black"> With an immutable admin account, the application allows for one to remove or add potential services, as well as manage and remove users from the database. It includes an updated list of all Users and Clinics, taken from the online database system </p>
 			</div>
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView" style = "background-color: darkorange">
+			<div class = "OverView" style = "background-color: mediumaquamarine">
 				<img src = "Resources/Android/ss_employee.png" class = "contentImage" >
 				<h1 style = "color:black">Clinic Functionality</h1>
 				<p style = "color:black"> A clinic registers with its information, and can then actively adjust which services they offer, as well as the times which patients can book in with a doctor. They have a rating, and a current wait time, and are actively updated in the search results based on their name and service they offer. </p>
@@ -58,10 +60,10 @@
 			<br> 
 			<br> 
 			<br>
-			<div class = "OverView" style = "background-color: darkred">
+			<div class = "OverView" style = "background-color: turquoise">
 				<img src = "Resources/Android/ss_patient_search.png" class = "contentImage" style = "float:right" >
 				<h1>Patient Functionality</h1>
-				<p style = "color:white"> A patient has the ability to search for clinics, book an appointment in their available slots, and leave a rating for the clinic after doing so. The patient’s database contains stored appointments that they have made.  </p>
+				<p style = "color:black"> A patient has the ability to search for clinics, book an appointment in their available slots, and leave a rating for the clinic after doing so. The patient’s database contains stored appointments that they have made.  </p>
 			</div>
 			<br> 
 			<br> 
@@ -70,10 +72,10 @@
 		</div>
 	</body>
 	<footer> <br> <br> <br> <div class = "referenceBank">
-			<a class = "referenceButton" href = "https://github.com/ABradwell"> GitHub </a>
-			<a class = "referenceButton" href = ""> LinkedIn </a>
-			<a class = "referenceButton" href = ""> HackerRank </a>
-			<a class = "referenceButton" href = ""> LeetCode </a>
+			<a class = "referenceButton" target = "_blank" href = "https://github.com/ABradwell"> GitHub </a>
+			<a class = "referenceButton" target = "_blank" href = "https://www.linkedin.com/in/aiden-bradwell-78324b131/"> LinkedIn </a>
+			<a class = "referenceButton" target = "_blank" href = "https://www.hackerrank.com/dashboard"> HackerRank </a>
+			<a class = "referenceButton" target = "_blank" href = "https://leetcode.com/bradwell/"> LeetCode </a>
 		</div> <br> <br> <br> </footer>
 
 

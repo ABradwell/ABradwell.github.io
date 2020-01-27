@@ -6,32 +6,34 @@
 		<meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
 		<style> body{ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Resources/automated_creatures/background.png);}</style>
-			<div class = "header">
-						<a href = "index.html" style="float:left;"> <img src = "Resources/profile.png" class = "profileImage"> </a> 
-						<h1 style = "max-width: 100%; text-align: center;"> Aiden Stevenson Bradwell </h1>
-						<h3 style = "max-width: 100%;  text-align: center;"> University of Ottawa, 2nd Year <br>
-				 		BSc Major in Computer Science, Major in Psychology </h3>
-			<p class = "buttonHolder"> 
-				<a class = "buttons" href= "index.html"> About Me </a>
-				<a class = "buttons" href= "index.html"> Contact </a>
-				<a class = "buttons" href= "index.html"> Projects </a>
+<div class = "headerHolder">
+				<img src = "Resources/profile.png" class = "headericon" style = "margin-right: 15px">
 				<br>
-			</p>
-			</div>
-			<br><br><br>
+				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px"> Aiden Stevenson Bradwell </h1>
+				<h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px"> University of Ottawa, Ontario, Canada</h3> <h3 style = " margin-top: 0px;margin-left: : 50px"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
+				<div class = "headerbuttonholder">
+					<a class = "headerbutton" href = "index.html"> Home </a>
+					<a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a>
+					<a class = "headerbutton" href = "WalkinClinic.html"> Android App </a>
+					<a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a>
+					<a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a>
+					<a class = "headerbutton" href = "resumes.html"> Resumes </a>
+					<a class = "headerbutton" href = ""> Contact </a>
+				</div>
+			</div><br><br>
 	</head>
 	<body>
 		<div class = "projects">
-			<div class = "OverView" style = "background-color: seagreen">
-				<h1> A Program of [Near] Chance </h1>
-				<h3> <b>Created:</b> August 2018 <br> <b>Packages Used:</b> <a href = “”> Zelle Graphic Package </a></h3>
-				<p> Consisting of an interactable menu, automatic map generation, and core-level wandering AI, this program is meant to harness the seemingly-random nature of AI. Written over the course of 5 days, it was my first programming interaction with Python, and introduced me to a plethora of interesting challenges and features of using Python for the task. </p>
-
+			<div class = "OverView" style = "background-color: greenyellow; min-height: 100px">
+				<h1 style = "color:black">Map Generation & Simple AI</h1>
+				<h3 style = "color:black"> <b>As implemented by Aiden Bradwell <br>
+				Created on August 20th, 2018 <br>
+				<b>Software Used:</b> Interactive UI, Random Map Generation, Basic roaming AI, Underlying 2d Array</h3>
 			</div>
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView"  style = "background-color: lightblue">
+			<div class = "OverView"  style = "background-color: chartreuse">
 				<img src = "Resources/automated_creatures/menu.png" class = "contentImage">
 				<h1 style = "color:black"> Menu System </h1>
 				<p style = "color:black"> Designed using click-fields hard coded into the graphics. Each click returns an (x,y) point which is then analyzed to determine if it was within a field. Each click leaves a crosshair on the background, to confirm that while the click did not activate the program, it was received. <br><br> The ratio determines the # of cubes placed on the screen, resulting in smaller cubes the higher larger the selected map. </p>
@@ -40,7 +42,7 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView" style = "background-color: seagreen">
+			<div class = "OverView" style = "background-color: lawngreen">
 				<img src = "Resources/automated_creatures/map_arrows.png" class = "contentImage" style = "float:right" >
 				<h1> Map Generation </h1>
 				<p> The map generator algorithm fills the map from left to right, using its knowledge of the surrounding map-pieces to create land masses, instead of a map of small and isolated slivers of land. This allows for the animal to traverse the land, and creates a more visually appealing map. <br><br> The map always fills the same window size, but adjusts the cube-size to fill with the requested number of pieces. The odds of placing a piece which is harmonious with its' surrounding pieces is significantly higher than the odds of it placing a non-homogenous piece.  </p>
@@ -48,7 +50,7 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView" style = "background-color: lightblue">
+			<div class = "OverView" style = "background-color: lime">
 				<img src = "Resources/automated_creatures/map_animal.png" class = "contentImage" >
 				<h1 style = "color:black"> Animal Spawning </h1>
 				<p style = "color:black"> The program finally spawns a creature to roam the map, with the creature’s size being comparative to the map’s cube sizes. The creature is a random walker, staying on the land pieces and avoiding the water. It has a tendency to walk upwards. On to better things, I guess! </p>
@@ -60,10 +62,10 @@
 		</div>
 	</body>
 	<footer> <br> <br> <br> <div class = "referenceBank">
-			<a class = "referenceButton" href = "https://github.com/ABradwell"> GitHub </a>
-			<a class = "referenceButton" href = ""> LinkedIn </a>
-			<a class = "referenceButton" href = ""> HackerRank </a>
-			<a class = "referenceButton" href = ""> LeetCode </a>
+			<a class = "referenceButton" target = "_blank" href = "https://github.com/ABradwell"> GitHub </a>
+			<a class = "referenceButton" target = "_blank" href = "https://www.linkedin.com/in/aiden-bradwell-78324b131/"> LinkedIn </a>
+			<a class = "referenceButton" target = "_blank" href = "https://www.hackerrank.com/dashboard"> HackerRank </a>
+			<a class = "referenceButton" target = "_blank" href = "https://leetcode.com/bradwell/"> LeetCode </a>
 		</div> <br> <br> <br> </footer>
 
 
