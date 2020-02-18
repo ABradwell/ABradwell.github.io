@@ -2,29 +2,67 @@
 
 
 <html>
-	<head>
-		<meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
-		<style> body{ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Resources/automated_creatures/background.png);}</style>
-<div class = "headerHolder">
-				<img src = "Resources/profile.png" class = "headericon" style = "margin-right: 15px">
-				<br>
-				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px"> Aiden Stevenson Bradwell </h1>
-				<h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px"> University of Ottawa, Ontario, Canada</h3> <h3 style = " margin-top: 0px;margin-left: : 50px"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
-				<div class = "headerbuttonholder">
-					<a class = "headerbutton" href = "index.html"> Home </a>
-					<a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a>
-					<a class = "headerbutton" href = "WalkinClinic.html"> Android App </a>
-					<a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a>
-					<a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a>
-					<a class = "headerbutton" href = "resumes.html"> Resumes </a>
-					<a class = "headerbutton" href = ""> Contact </a>
-				</div>
-			</div><br><br>
-	</head>
-	<body>
-		<div class = "projects">
-			<div class = "OverView" style = "background-color: greenyellow; min-height: 100px">
+<head>
+    <meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
+	<style> 
+	canvas {
+		width: window.innerWidth;
+		height: window.innerWidth;
+		position:absolute;
+	}
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+	</style>
+</head>
+
+<body style = "background-color: rgb(42, 34, 34)">
+	<header>
+	
+			<div class = "headerHolder" style="">
+				
+				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px;color: white; font-size: 25px; padding-bottom: 7px"> Aiden Stevenson Bradwell </h1>
+                <h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px;color: lightgrey"> University of Ottawa, Ontario, Canada</h3> 
+
+                <h3 style = " margin-top: 0px;margin-left: : 50px;color: lightgrey;"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
+			</div>
+			<div class = "headerbuttonholder">
+				<a class = "headerbutton" href = "index.html"> Home </a>
+                 <a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a>
+                <a class = "headerbutton" href = "WalkinClinic.html"> Android App </a>
+                <a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a>
+                <a class = "headerbutton" href = "resumes.html"> Resumes </a>
+                <a class = "headerbutton" href = "contact.html"> Contact </a>
+            </div>
+            <br>
+	</header>
+
+
+	 <section>
+        <nav>
+            <div style = "background-color: white">
+                <img src = "Resources/profile.png" class = "headericon" style = "margin-right: 15px">
+                <p style = "margin:0; padding:0; color:black"> Welcome! Studying Computer Science Student at the University of Ottawa with interest in artificial intelligence and machine learning, I am currently in my 2nd year of studies. <br><br> As well, I am currently seeking a COOP Placement for the summer 2020 term. <br><br>Thank you for taking the time to visit my site! </p>
+            </div>
+            <ul>
+            	<li><a class = "headerbutton" href = "index.html"> Home </a></li>
+                <li><a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a></li>
+                <li><a class = "headerbutton" href = "WalkinClinic.html"> Android App </a></li>
+                <li><a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a></li>
+                <li><a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a></li>
+                <li><a class = "headerbutton" href = "resumes.html"> Resumes </a></li>
+                <li><a class = "headerbutton" href = "contact.html"> Contact </a></li>
+            </ul>
+
+        </nav>
+         
+
+
+        </article>
+            <article style = "background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(Resources/automated_creatures/background.png);">
+			<div class = "OverView" style = "background-color: white;">
 				<h1 style = "color:black">Map Generation & Simple AI</h1>
 				<h3 style = "color:black"> <b>As implemented by Aiden Bradwell <br>
 				Created on August 20th, 2018 <br>
@@ -33,16 +71,15 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView"  style = "background-color: chartreuse">
+			<div class = "OverView"  style = "background-color: white">
 				<img src = "Resources/automated_creatures/menu.png" class = "contentImage">
 				<h1 style = "color:black"> Menu System </h1>
 				<p style = "color:black"> Designed using click-fields hard coded into the graphics. Each click returns an (x,y) point which is then analyzed to determine if it was within a field. Each click leaves a crosshair on the background, to confirm that while the click did not activate the program, it was received. <br><br> The ratio determines the # of cubes placed on the screen, resulting in smaller cubes the higher larger the selected map. </p>
-
 			</div>
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView" style = "background-color: lawngreen">
+			<div class = "OverView" style = "background-color: white">
 				<img src = "Resources/automated_creatures/map_arrows.png" class = "contentImage" style = "float:right" >
 				<h1> Map Generation </h1>
 				<p> The map generator algorithm fills the map from left to right, using its knowledge of the surrounding map-pieces to create land masses, instead of a map of small and isolated slivers of land. This allows for the animal to traverse the land, and creates a more visually appealing map. <br><br> The map always fills the same window size, but adjusts the cube-size to fill with the requested number of pieces. The odds of placing a piece which is harmonious with its' surrounding pieces is significantly higher than the odds of it placing a non-homogenous piece.  </p>
@@ -50,7 +87,7 @@
 			<br> 
 			<br> 
 			<br> 
-			<div class = "OverView" style = "background-color: lime">
+			<div class = "OverView" style = "background-color: white">
 				<img src = "Resources/automated_creatures/map_animal.png" class = "contentImage" >
 				<h1 style = "color:black"> Animal Spawning </h1>
 				<p style = "color:black"> The program finally spawns a creature to roam the map, with the creature’s size being comparative to the map’s cube sizes. The creature is a random walker, staying on the land pieces and avoiding the water. It has a tendency to walk upwards. On to better things, I guess! </p>

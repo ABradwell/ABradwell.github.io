@@ -2,199 +2,103 @@
 
 
 <html>
+<head>
+    <meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
 	<style> 
 	canvas {
 		width: window.innerWidth;
 		height: window.innerWidth;
 		position:absolute;
 	}
+    <style>
+    * {
+      box-sizing: border-box;
+    }
 	</style>
-	
+</head>
 
-
-	<head>
-		<meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
-
-			<div class = "headerHolder">
-				<img src = "Resources/profile.png" class = "headericon" style = "margin-right: 15px">
-				<br>
-				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px"> Aiden Stevenson Bradwell </h1>
-				<h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px"> University of Ottawa, Ontario, Canada</h3> <h3 style = " margin-top: 0px;margin-left: : 50px"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
-				<div class = "headerbuttonholder">
-					<a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a>
-					<a class = "headerbutton" href = "WalkinClinic.html"> Android App </a>
-					<a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a>
-					<a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a>
-					<a class = "headerbutton" href = "resumes.html"> Resumes </a>
-					<a class = "headerbutton" href = ""> Contact </a>
-					<!-- <a class = "headerbutton" href = "automated_creatures.html"> Experimental Page </a> -->
-				</div>
-			</div>
-	</head>
-	<body onload  = "startGame()">
-		<div>
-			
-			<script>
+<body style = "background-color: rgb(42, 34, 34)">
+	<header>
 		
-	var rightFrame;
-	var leftFrame;
-	var topclear;
-	var rightclear;
-	var leftclear;
-	var bottomclear;
-function startGame() {
-    rightFrame = new component(-10,-50,30,30);
-    leftFrame = new component(10,50,-30,-30);
 
-    topclear = new clearingcomponent(0, 0, -30, 0, window.innerHeight/2, window.innerWidth*2);
-    bottomclear = new clearingcomponent(0, window.innerHeight/2, 30, 0, window.innerHeight/2, window.innerWidth);
-    rightclear = new clearingcomponent(window.innerWidth/2, 0, 0, 30, window.innerHeight, window.innerWidth/2);
-    leftclear = new clearingcomponent(0, 0, 0, -30, window.innerHeight, window.innerWidth/2);
-    myGameArea.start();
-}
+			<div class = "headerHolder" style="">
+				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px;color: white; font-size: 25px; padding-bottom: 7px"> Aiden Stevenson Bradwell </h1>
+                <h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px;color: lightgrey"> University of Ottawa, Ontario, Canada</h3> 
 
-var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
-        this.context = this.canvas.getContext("2d");
-
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.interval = setInterval(updateGameArea, 20);
-    },
-    clear : function() {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    }
-}
-
-
-function component( len, hei, right, down) {
-
-	var startx = window.innerWidth/2;
-	var starty = window.innerHeight/2;
-    this.speedX = right;
-    this.speedY = down;
-    this.x = startx;
-    this.y = starty;    
-    this.update = function() {
-        ctx = myGameArea.context;
-        ctx.fillStyle = "black";
-        ctx.fillRect(this.x, this.y, hei, len);
-        ctx.fillRect(this.x, this.y, len, hei);
-    }
-    this.newPos = function() {
-        this.x += this.speedX;
-        this.y += this.speedY;        
-    }    
-}
-function clearingcomponent( startx, starty, verticle, horizontal, height, width) {
-    this.speedX = horizontal;
-    this.speedY = verticle;
-    this.x = startx;
-    this.y = starty;
-
-    this.update = function() {
-        ctx = myGameArea.context;
-        ctx.fillStyle = "white";
-        ctx.fillRect(this.x, this.y, width, height);
-        ctx.fillRect(this.x, this.y, width, height);
-    }
-    this.newPos = function() {
-        this.x += this.speedX;
-        this.y += this.speedY;        
-    }
-    this.checkClear = function(){
-    	if(this.speedX <0){
-    		if(this.x + window.innerWidth < 0){
-    			delete block.canvas;
-    			exit();
-    		}
-    	}else if(this.speed > 0) {
-    		if(this.x > window.innerWidth){
-    			delete block.canvas;
-    			exit();
-    		}
-    	}else{
-    		if (this.speedY < 0){
-    			if(this.y + window.innerHeight < 0){
-    				delete block.canvas;
-    				exit();
-    			}
-    		}else{
-    			if(this.y > window.innerHeight){
-    				delete myGameArea;
-    				exit();
-    			}
-    		}
-    	}
-    }    
-}
-
-function updateGameArea() {
-    myGameArea.clear();
-
-    leftFrame.newPos();
-    rightFrame.newPos();
-
-    topclear.checkClear();
-    rightclear.checkClear();
-
-    topclear.newPos();
-    bottomclear.newPos();
-    rightclear.newPos();
-    leftclear.newPos();
-
-    topclear.update();
-    bottomclear.update();
-    rightclear.update();
-    leftclear.update();
-
-    leftFrame.update();    
-    rightFrame.update();
-
-
-}
-
-
-
-</script>
-		</div>
-		<div class = "projects">
-			<div class = "OverView" style = "background-color: greenyellow; min-height: 100px">
-				<h1 style = "color:black">Map Generation & Simple AI</h1>
-				<h3 style = "color:black"> <b>As implemented by Aiden Bradwell <br>
-				Created on August 20th, 2018 <br>
-				<b>Software Used:</b> Interactive UI, Random Map Generation, Basic roaming AI, Underlying 2d Array</h3>
+                <h3 style = " margin-top: 0px;margin-left: : 50px;color: lightgrey;"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
 			</div>
-			<br> 
-			<br> 
-			<br> 
-			<div class = "OverView"  style = "background-color: chartreuse">
-				<img src = "Resources/automated_creatures/menu.png" class = "contentImage">
-				<h1 style = "color:black"> Menu System </h1>
-				<p style = "color:black"> Designed using click-fields hard coded into the graphics. Each click returns an (x,y) point which is then analyzed to determine if it was within a field. Each click leaves a crosshair on the background, to confirm that while the click did not activate the program, it was received. <br><br> The ratio determines the # of cubes placed on the screen, resulting in smaller cubes the higher larger the selected map. </p>
-
-			</div>
-			<br> 
-			<br> 
-			<br> 
-			<div class = "OverView" style = "background-color: lawngreen">
-				<img src = "Resources/automated_creatures/map_arrows.png" class = "contentImage" style = "float:right" >
-				<h1> Map Generation </h1>
-				<p> The map generator algorithm fills the map from left to right, using its knowledge of the surrounding map-pieces to create land masses, instead of a map of small and isolated slivers of land. This allows for the animal to traverse the land, and creates a more visually appealing map. <br><br> The map always fills the same window size, but adjusts the cube-size to fill with the requested number of pieces. The odds of placing a piece which is harmonious with its' surrounding pieces is significantly higher than the odds of it placing a non-homogenous piece.  </p>
-			</div>
-			<br> 
-			<br> 
-			<br> 
-			<div class = "OverView" style = "background-color: lime">
-				<img src = "Resources/automated_creatures/map_animal.png" class = "contentImage" >
-				<h1 style = "color:black"> Animal Spawning </h1>
-				<p style = "color:black"> The program finally spawns a creature to roam the map, with the creature’s size being comparative to the map’s cube sizes. The creature is a random walker, staying on the land pieces and avoiding the water. It has a tendency to walk upwards. On to better things, I guess! </p>
-			</div>
+            <div class = "headerbuttonholder">
+                 <a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a>
+                <a class = "headerbutton" href = "WalkinClinic.html"> Android App </a>
+                <a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a>
+                <a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a>
+                <a class = "headerbutton" href = "resumes.html"> Resumes </a>
+                <a class = "headerbutton" href = ""> Contact </a>
+            </div>
+            <br>
+	</header>
 
 
-<p>If you click a button the red square will start moving. Click the same button many times, and it will move faster and faster.</p>
-	</body>
+    <section style = "background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 10)), url(Resources/Resumes/background.png);">
+        <nav>
+            <div style = "background-color: white; margin-top: 0; padding-top: 0">
+                <img src = "Resources/profile.png" class = "headericon" style = "margin-top: 0; margin:0; padding:0">
+                <p style = "margin:0; padding:0; color:black"> Welcome! Studying Computer Science Student at the University of Ottawa with interest in artificial intelligence and machine learning, I am currently in my 2nd year of studies. <br><br> As well, I am currently seeking a COOP Placement for the summer 2020 term. <br><br>Thank you for taking the time to visit my site! </p>
+            </div>
+            <ul>
+                <li><a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a></li>
+                <li><a class = "headerbutton" href = "WalkinClinic.html"> Android App </a></li>
+                <li><a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a></li>
+                <li><a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a></li>
+                <li><a class = "headerbutton" href = "resumes.html"> Resumes </a></li>
+                <li><a class = "headerbutton" href = ""> Contact </a></li>
+            </ul>
+
+        </nav>
+         
+        </article>
+        <article style = "padding-left: 15%">
+            <h2> Resumes </h2>
+            <ul style = "color:white">
+                <li><h2> <a href = "resumes.html" class = "index"> Coop Resume </a> </h2>
+                <p> Courses Taken, CGPA, Official Ontario Co Op Resume  </p></li>
+                <br>
+                <li><h2> <a href = "bredthfirst.html" class = "index"> Personal Resume </a> </h2>
+                <p> Additional Personal Resume  </p></li>
+            </ul>
+            <h2 > Personal Projects </h2>
+            <ul style = "color:white">
+                <li><h2> <a href = "automated_creatures.html" class = "index"> AI Creatures </a> </h2>
+                <p> A random map-generator & basic AI spawner. </p></li>
+                <br>
+                <li><h2> <a href = "index.html" class = "index"> Network Framework </a>  </h2>
+                <p> A framework for neural networks programmed in Go, using concurrent channels. </p></li>
+            </ul>
+            <h2> School Projects </h2>
+            <ul style = "color:white">
+                <li><h2> <a href = "bredthfirst.html" class = "index"> Lights Out Game </a> </h2>
+                <p> Java Visuals game involving a contorller, model, view system.  </p></li>
+                <br>
+                <li><h2> <a href = "WalkinClinic.html" class = "index"> Walk In Clinic App </a>  </h2>
+                <p> Android Studio app implemneting Firebase Authentication, representing a clinic booking system. </p></li>
+            </ul>
+            
+
+            <h3>  </h3>
+        </article>
+    </section>
+
+
+        <footer> 
+            <div class = "referenceBank">
+                <a class = "referenceButton" target = "_blank" href = "https://github.com/ABradwell"> GitHub </a>
+                <a class = "referenceButton" target = "_blank" href = "https://www.linkedin.com/in/aiden-bradwell-78324b131/"> LinkedIn </a>
+                <a class = "referenceButton" target = "_blank" href = "https://www.hackerrank.com/dashboard"> HackerRank </a>
+                <a class = "referenceButton" target = "_blank" href = "https://leetcode.com/bradwell/"> LeetCode </a>
+            </div> <br> <br> <br> 
+        </footer>
+    </body>
+
+    
 </html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+
+<html>
+	<style> 
+	canvas {
+		width: window.innerWidth;
+		height: window.innerWidth;
+		position:absolute;
+	}
+	</style>
+	
+
+
+	<head style="background-color: darkgrey; align-content: center; height: wrap-content">
+		<meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
+
+			<div class = "headerHolder" style="background-color: rgb(42, 34, 34); align-content: center;">
+				
+				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px;color: white; font-size: 25px; padding-bottom: 7px"> Aiden Stevenson Bradwell </h1>
+                <h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px;color: lightgrey"> University of Ottawa, Ontario, Canada</h3> 
+
+                <h3 style = " margin-top: 0px;margin-left: : 50px;color: lightgrey;"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
+			</div>
+	</head>
+
+	<body style = "background-color: rgb(42, 34, 34)">
+		<div>
+			<script>
+		
+	var rightFrame;
+	var leftFrame;
+	var topclear;
+	var rightclear;
+	var leftclear;
+	var bottomclear;
+function startGame() {
+    rightFrame = new component(-10,-50,30,30);
+    leftFrame = new component(10,50,-30,-30);
+
+    topclear = new clearingcomponent(0, 0, -30, 0, window.innerHeight/2, window.innerWidth*2);
+    bottomclear = new clearingcomponent(0, window.innerHeight/2, 30, 0, window.innerHeight/2, window.innerWidth);
+    rightclear = new clearingcomponent(window.innerWidth/2, 0, 0, 30, window.innerHeight, window.innerWidth/2);
+    leftclear = new clearingcomponent(0, 0, 0, -30, window.innerHeight, window.innerWidth/2);
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+        this.context = this.canvas.getContext("2d");
+
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.interval = setInterval(updateGameArea, 20);
+    },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+
+function component( len, hei, right, down) {
+
+	var startx = window.innerWidth/2;
+	var starty = window.innerHeight/2;
+    this.speedX = right;
+    this.speedY = down;
+    this.x = startx;
+    this.y = starty;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = "black";
+        ctx.fillRect(this.x, this.y, hei, len);
+        ctx.fillRect(this.x, this.y, len, hei);
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }    
+}
+function clearingcomponent( startx, starty, verticle, horizontal, height, width) {
+    this.speedX = horizontal;
+    this.speedY = verticle;
+    this.x = startx;
+    this.y = starty;
+
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = "white";
+        ctx.fillRect(this.x, this.y, width, height);
+        ctx.fillRect(this.x, this.y, width, height);
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }
+    this.checkClear = function(){
+    	if(this.speedX <0){
+    		if(this.x + window.innerWidth < 0){
+    			delete block.canvas;
+    			exit();
+    		}
+    	}else if(this.speed > 0) {
+    		if(this.x > window.innerWidth){
+    			delete block.canvas;
+    			exit();
+    		}
+    	}else{
+    		if (this.speedY < 0){
+    			if(this.y + window.innerHeight < 0){
+    				delete block.canvas;
+    				exit();
+    			}
+    		}else{
+    			if(this.y > window.innerHeight){
+    				delete myGameArea;
+    				exit();
+    			}
+    		}
+    	}
+    }    
+}
+
+function updateGameArea() {
+    myGameArea.clear();
+
+    leftFrame.newPos();
+    rightFrame.newPos();
+
+    topclear.checkClear();
+    rightclear.checkClear();
+
+    topclear.newPos();
+    bottomclear.newPos();
+    rightclear.newPos();
+    leftclear.newPos();
+
+    topclear.update();
+    bottomclear.update();
+    rightclear.update();
+    leftclear.update();
+
+    leftFrame.update();    
+    rightFrame.update();
+
+
+}
+
+
+
+</script>
+		</div>
+        <div class = "projects" style= "text-align: center;">
+            <div class = "row">
+                <div class = "node" style = "background-color: coral">
+                    <a href = "resumes.html"> 
+                        <h1 style = "line-height: 35px; text-align: center"> CO-OP <br> Programming Resume </h1>
+                    </a>
+                </div>
+                <div class = "node" style = "background-color: tomato">
+                    <a href = "index.html">
+                        <h1 style = "line-height: 35px; text-align: center"> Personal <br>  Programming Resume *INACTIVE* </h1>
+                    </a>
+                </div>
+            </div> 
+            <div class = "row">
+                <div class = "node" style = "background-color: orangered">
+                    <a href = "automated_creatures.html"> <img src = "Resources/ai_icon.png" class = "icon"> 
+                        <h1 style = "line-height: 35px"> Automated Creature Project (Python) </h1>
+                    </a>
+                </div>
+                <div class = "node" style = "background-color: darkorange">
+                    <a href = "WalkinClinic.html"> <img src = "Resources/android_icon.png" class = "icon"> 
+                        <h1 style = "line-height: 35px"> Walk-In Clinic App (Android) </h1>
+                    </a>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "node" style = "background-color: orange">
+                    <a href = "bredthfirst.html"> <img src = "Resources/java_icon.png" class = "icon" style="float:left;"> 
+                        <h1 style = "line-height: 35px"> Lights Out Game (Java w/ Visuals) </h1>
+                    </a>
+                </div>
+                <div class = "node" style = "background-color: gold">
+                    <a href = "https://github.com/ABradwell/Portfolio"> <img src = "Resources/books_icon.png" class = "icon"> 
+                        <h1 style = "line-height: 35px"> Class Assignments (Multi-Language) </h1>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+    </body>
+    <footer> <br> <br> <br> <div class = "referenceBank">
+            <a class = "referenceButton" target = "_blank" href = "https://github.com/ABradwell"> GitHub </a>
+            <a class = "referenceButton" target = "_blank" href = "https://www.linkedin.com/in/aiden-bradwell-78324b131/"> LinkedIn </a>
+            <a class = "referenceButton" target = "_blank" href = "https://www.hackerrank.com/dashboard"> HackerRank </a>
+            <a class = "referenceButton" target = "_blank" href = "https://leetcode.com/bradwell/"> LeetCode </a>
+        </div> <br> <br> <br> </footer>
+</html>

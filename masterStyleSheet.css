@@ -1,54 +1,4 @@
-			body{
-				background-color: white;
-				 background-position: center;
-				  background-repeat: repeat-y;
-				  background-size: cover;
-				  position: relative;
-				 padding-left: 25px;
-				 padding-right: 25px;
-				 text-align: left;
-				 margin: 0 auto;
-			}h1 {
-				color:black;
-				font-family: Arial, Helvetica, serif;
-				font-size: 20px;
-				line-height: 15px;
-			} h3 {
-				color:black;
-				font-family: Arial, Helvetica, sans-serif;
-				font-size: 15px;
-				padding: 0px, 0px;
-				line-height: 19px;
-			} p {
-				font-family: Arial, Helvetica, sans-serif;
-				color:black;
-				font-size: 12px ;
-
-			} 
-
-			a.featbuttons {
-				color: white;
-				background-color: red;
-				text-align: center;
-				margin:5px;
-				padding:5px 10px;
-				border-radius: 13px;
-				box-shadow: 0 9px #999;
-				float:center;
-				text-decoration: none;
-				outline: none;
-
-			}a.featbuttons:hover {
-			  background-color: red;
-			  color: black;
-			}a.featbuttons:active {
-			  background-color: red;
-			  color: black;
-			  box-shadow: 0 1px #999; 
-			  transform: translateX(1px);
-			  transform: translateY(8px);
-			  color: white;
-			}
+			
 			p.buttonHolder {
 				color:white;
 				width = window.innerWidth;
@@ -82,20 +32,6 @@
 				background-color:hsla(20, 100%, 59%, 1);
 				padding-left: 40px;
 				padding-right: 25px;
-			} div.header {
-				border:4px solid black;
-				background-color:hsla(950, 100%, 59%, 1);
-				height:160px;
-				max-width:650px;
-				margin: 0 auto;
-				/*overflow: auto;*/
-
-			 } div.projects {
-				margin: 0 auto;
-				border: double black;
-				padding: 45px;
-				background-color: rgba(600,600,600, 0.3);
-				max-width: 1000px;
 			}div.node {
 				display: inline-block;
 				color:white;
@@ -111,9 +47,6 @@
 				display:table;
 				margin: 0 auto;
 				width: window.innerWidth -100;
-			} img.profileImage {
-				max-height: 160px;
-				overflow: auto;
 			} img.contentImage {
 				height:250px;
 				float:left;
@@ -133,10 +66,8 @@
 				max-width:650px;
 				margin: 0 auto;
 			} div.referenceBank{
-				float: center;
 				padding: 5px;
 				text-align: center;
-				margin: ;
 			}a.referenceButton{
 				float:center;
 				margin:5px;
@@ -163,27 +94,18 @@
 
 			}
 			/*HEADER OPTIONS	*/
-			div.headerHolder{
-				padding:0px;
-				margin:0px;
-				background-color: white;
-				height:100px;
-				max-height:100px;
+			div.headerbuttonholder{
+				text-decoration: underline;
+				align-content: center;
 				width:100%;
-			}div.headerbuttonholder{
-				background-color: black;
-				overflow-x: auto;
-				overflow-wrap: none;
-				width:100%;
-				height:24px;
-				float: right;
+				height:wrap-content;
+				padding: 2px
 			}a.headerbutton{
 				height:30px;
-				background-color: black;
-				color:white;
-				border: 1px solid white;
+				color:lightgrey;
 				font-size: 15px;
 				text-decoration: none;
+				font-family: Arial, Helvetica, sans-serif;
 				padding:5px;
 			}a.headerbutton:hover{
 				background-color: white;
@@ -194,9 +116,109 @@
 				color:red;
 				border: 1px solid black;
 			}img.headericon{
-				float:left;
-				height:100px;
-				width:100px;
+				width:100%;
+				max-width: 250px;
 				padding:0px;
 				margin:0px;
+				float:left;
+			}
+
+
+
+			a.index{
+				color:dodgerblue;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 15px;
+				padding: 0px, 0px;
+				line-height: 19px;
+
+			}
+			* {
+  				box-sizing: border-box;
+			}
+			nav ul{
+				list-style-type: none; 
+				padding:0;
+			}
+			nav{
+				/*width: 175px;*/
+				max-width:200px;
+				width: 30%;
+				float:left;
+				height: :wrap-content;
+				/*max-height: 500px;*/
+				border: 1px solid white;
+				align-content: center; 
+				text-align: center;
+				text-decoration: none; 
+				float:left;
+				position: -webkit-sticky; /* Safari */
+ 				position: sticky;
+ 				top:10px;
+			}article{
+				width:70%;		
+				/*border: double white;*/
+				padding: 45px;
+				text-align: left; 
+				float:left;
+				/*background-color: rgba(600,600,600, 0.3);*/
+			}section:after{
+				content:"";
+				display: table;
+				clear:both;
+			}
+			footer{
+				text-align: center;
+				width:100%;
+				padding:10px;
+			}
+			header{
+				height: wrap-content;
+				background-color: rgb(42, 34, 34); 
+				align-content: center;
+				padding:5px;
+				margin:0px;
+				text-align: center;
+				width:100%;
+			}
+
+			@media (max-width: 600px) {
+			  nav, article {
+			    width: 100%;
+			    height: auto;
+			  }
+			}
+			body{
+				background-color: darkgrey;
+				background-position: center;
+				background-repeat: repeat-y;
+				background-size: cover;
+				position: relative;
+				padding-left: 25px;
+				padding-right: 25px;
+				/*text-align: left;*/
+				margin: 0 auto;
+			}h1 {
+				color:white;
+				font-family: Arial, Helvetica, serif;
+				font-size: 20px;
+				line-height: 15px;
+			} h2 {
+				color:dodgerblue;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 20px;
+				margin:0;
+				padding:0;
+			} h3 {
+				color:orangered;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 15px;
+				padding: 0px, 0px;
+				/*line-height: 19px;*/
+			} p {
+				font-family: Arial, Helvetica, sans-serif;
+				color:white;
+				font-size: 12px ;
+				margin: 0;
+				padding:0;
 			}

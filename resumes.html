@@ -2,35 +2,84 @@
 
 
 <html>
-	<head>
-		<meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
-		<style> body{ background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Resources/Resumes/background.png);}</style>
-<div class = "headerHolder">
-				<img src = "Resources/profile.png" class = "headericon" style = "margin-right: 15px">
-				<br>
-				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px"> Aiden Stevenson Bradwell </h1>
-				<h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px"> University of Ottawa, Ontario, Canada</h3> <h3 style = " margin-top: 0px;margin-left: : 50px"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
-				<div class = "headerbuttonholder">
-					<a class = "headerbutton" href = "index.html"> Home </a>
-					<a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a>
-					<a class = "headerbutton" href = "WalkinClinic.html"> Android App </a>
-					<a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a>
-					<a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a>
-					<a class = "headerbutton" href = "resumes.html"> Resumes </a>
-					<a class = "headerbutton" href = ""> Contact </a>
-				</div>
-			</div><br><br>
-	</head>
-	<body>
-		<div class = "projects">
-			<h1 style = "color:white; "> CO-OP Resume </h1>
-			<iframe src = "Resources/Resumes/Coop_Resume.pdf" width = "100%" height = "500px" style = "max-height: 500px">  </iframe>
-		</div>
-	</body>
-	<footer> <br> <br> <br> <div class = "referenceBank">
-			<a class = "referenceButton" target = "_blank" href = "https://github.com/ABradwell"> GitHub </a>
-			<a class = "referenceButton" target = "_blank" href = "https://www.linkedin.com/in/aiden-bradwell-78324b131/"> LinkedIn </a>
-			<a class = "referenceButton" target = "_blank" href = "https://www.hackerrank.com/dashboard"> HackerRank </a>
-			<a class = "referenceButton" target = "_blank" href = "https://leetcode.com/bradwell/"> LeetCode </a>
-		</div> <br> <br> <br> </footer>
+<head>
+    <meta name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="masterStyleSheet.css">
+	<style> 
+	canvas {
+		width: window.innerWidth;
+		height: window.innerWidth;
+		position:absolute;
+	}
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+	</style>
+</head>
+
+<body style = "background-color: rgb(42, 34, 34)">
+	<header>
+		
+
+			<div class = "headerHolder" style="">
+				
+				<h1 style = "line-height: 25px;  margin-bottom: 0px;  margin-left: : 30px;color: white; font-size: 25px; padding-bottom: 7px"> Aiden Stevenson Bradwell </h1>
+                <h3 style = "line-height: 15px; margin-bottom: 0px;padding-left: : 50px; margin-top: 0px;color: lightgrey"> University of Ottawa, Ontario, Canada</h3> 
+
+                <h3 style = " margin-top: 0px;margin-left: : 50px;color: lightgrey;"> 2nd year BSc Major in Computer Science, Major in Psychology </h3>
+			</div>
+			<div class = "headerbuttonholder">
+				<a class = "headerbutton" href = "index.html"> Home </a>
+                 <a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a>
+                <a class = "headerbutton" href = "WalkinClinic.html"> Android App </a>
+                <a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a>
+                <a class = "headerbutton" href = "resumes.html"> Resumes </a>
+                <a class = "headerbutton" href = "contact.html"> Contact </a>
+            </div>
+            <br>
+	</header>
+
+
+	 <section style = "background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 10)), url(Resources/Resumes/background.png);">
+        <nav>
+            <div style = "background-color: white">
+                <img src = "Resources/profile.png" class = "headericon" style = "margin-right: 15px">
+                <p style = "margin:0; padding:0; color:black"> Welcome! Studying Computer Science Student at the University of Ottawa with interest in artificial intelligence and machine learning, I am currently in my 2nd year of studies. <br><br> As well, I am currently seeking a COOP Placement for the summer 2020 term. <br><br>Thank you for taking the time to visit my site! </p>
+            </div>
+            <ul>
+            	<li><a class = "headerbutton" href = "index.html"> Home </a></li>
+                <li><a class = "headerbutton" href = "automated_creatures.html"> AI Creatures </a></li>
+                <li><a class = "headerbutton" href = "WalkinClinic.html"> Android App </a></li>
+                <li><a class = "headerbutton" href = "bredthfirst.html"> Lights-Out </a></li>
+                <li><a class = "headerbutton" href = "https://github.com/ABradwell/Portfolio"> Assignments </a></li>
+                <li><a class = "headerbutton" href = "resumes.html"> Resumes </a></li>
+                <li><a class = "headerbutton" href = "contact.html"> Contact </a></li>
+            </ul>
+
+        </nav>
+         
+
+
+        </article>
+            <article >
+    			<h1 style = "color:white; " id = "COOP"> CO-OP Resume </h1>
+    			<iframe src = "Resources/Resumes/Coop_Resume.pdf" width = "100%" height = "500px" style = "max-height: 500px">  </iframe>
+                <h1 style = "color:white; " id = "Personal"> Personal Resume </h1>
+                <iframe src = "Resources/Resumes/Personal_resume.pdf" width = "100%" height = "500px" style = "max-height: 500px">  </iframe>
+            </article>
+    </section>
+
+
+        <footer> 
+            <div class = "referenceBank" id = "footer">
+                <a class = "referenceButton" target = "_blank" href = "https://github.com/ABradwell"> GitHub </a>
+                <a class = "referenceButton" target = "_blank" href = "https://www.linkedin.com/in/aiden-bradwell-78324b131/"> LinkedIn </a>
+                <a class = "referenceButton" target = "_blank" href = "https://www.hackerrank.com/dashboard"> HackerRank </a>
+                <a class = "referenceButton" target = "_blank" href = "https://leetcode.com/bradwell/"> LeetCode </a>
+            </div> <br> <br> <br> 
+        </footer>
+    </body>
+
+    
+</html>
