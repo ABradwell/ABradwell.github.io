@@ -20,11 +20,17 @@
         flex-wrap: initial;
         display: grid;
         grid-gap: 10px 0px;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header_button {
+        min-width: 250px;
     }
     @media (min-width: 950px) {
         .header_button_holder {
-            grid-template-columns: repeat(5, 180px);
+            grid-template-columns: repeat(6, 180px);
+        }
+        .header_button {
+            min-width: 160px;
         }
     }
 }
@@ -63,7 +69,7 @@ div.homepage_name_div {
     border-style: solid;
     text-decoration: none;
     margin-left: 25px;
-    min-width: 160px;
+    /*min-width: 160px;*/
     white-space: nowrap;
     display: inline-block;
     height:100%;

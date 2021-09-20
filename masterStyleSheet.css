@@ -30,11 +30,14 @@
     --button-color-pasive-3: rgba(239, 112, 157, 0.49);
     --button-color-hard-3:#EF709D;
 
+    --button-color-pasive-6: rgba(119, 255, 126, 0.49);
+    --button-color-hard-6: #209d00;
+
     --button-color-pasive-4: rgba(233, 246, 118, 0.49);
-    --button-color-hard-4: #a6bb00;
+    --button-color-hard-4: #8a9627;
 
     --button-color-pasive-5: rgba(112, 228, 239, 0.49);
-    --button-color-hard-5:#70E4EF;
+    --button-color-hard-5: #00676e;
 }
 
 
@@ -115,6 +118,17 @@ nav li a.purple {
 
 nav li a.purple:hover {
     background-color: var(--button-color-hard-2);
+    color: white;
+    border-color: black;
+}
+
+nav li a.green {
+    background-color: var(--button-color-pasive-6);
+    color: black;
+}
+
+nav li a.green:hover {
+    background-color: var(--button-color-hard-6);
     color: white;
     border-color: black;
 }
