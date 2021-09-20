@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../masterStyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="../projects.css">
+    <!--        <link rel="stylesheet" type="text/css" href="masterStyleSheet.css">-->
+    <title>Aiden Stevenson Bradwell</title>
+</head>
+<body>
+    <div class="header_container">
+        <img class="header_image" src="../Resources/Images/Evolution_logo.png">
+        <h1 class="project_title"><b>SIMPLE EVOLUTION</b></h1>
+<!--        <p class="project_title">Single cell organisms in competition for survival.</p>-->
+    </div>
+    <div class="padded_section project_section side_split_reflexive ">
+        <div class="side_split_reflexive_inner">
+            <h1>Overview</h1>
+            <p>
+                The included program aims to create a simulation of very VERY simple evolutionary tendencies.<br>
+                A random selection of creatures (represented by some colored circle), which will then begin to compete for food.<br>
+                These creatures will begin with some random selection of abiltiies. AS they split, these qualtiies will spread to their decendants.<br><br>
+
+                Along side the program is an information window describing which generations were created, survived, and which were culled.
+            </p>
+        </div>
+        <div class="side_split_reflexive_inner" style="padding-left:24px">
+            <!--  GALLERY FOR DIFFERENT SCREENSHOTS OF THE PROGRAM  -->
+            <div class="centered_container" style="max-width: 750px;">
+                <div class="container">
+                    <div class="feature">
+                        <figure class="featured-item image-holder r-3-2 transition" style="margin-left:0"></figure>
+                    </div>
+
+                    <div class="gallery-wrapper">
+                        <div class="gallery">
+                            <div class="item-wrapper">
+                                <figure class="gallery-item image-holder r-3-2 active transition"></figure>
+                            </div>
+                            <div class="item-wrapper">
+                                <figure class="gallery-item image-holder r-3-2 transition"></figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button class="move-btn left">&larr;</button>
+                        <button class="move-btn right">&rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="padded_section project_section alternate_section p-15">
+        <h1>Creatures</h1>
+        <p>The creatures have a simple goal: gain enough SIZE to be able to split into two.<br><br>
+            Moving takes up <b>ENERGY</b><br>
+            Creatures must move to the <b>FOOD</b> to gain <b>SIZE</b> & regain <b>ENERGY</b><br>
+            Larger creatures require less <b>ENERGY</b> to move the same distance as a smaller creature<br>
+            Larger creatures require more <b>FOOD</b> than smaller creatures to <b>SPLIT</b> (Thus why they are larger)<br><br><br>
+
+            Creatures will be spawned with some combination of the following parameters
+        </p>
+
+        <table>
+            <tr>
+                <th><h3>TRAIT</h3></th>
+                <th><h3>RANGE</h3></th>
+            </tr>
+            <tr>
+                <td><b>Splitting factor</b></td>
+                <td>[18, 50]</td>
+            </tr>
+            <tr>
+                <td><b>Speed</b></td>
+                <td>[0.5, 2]</td>
+            </tr>
+            <tr>
+                <td><b>Size</b></td>
+                <td>[2, 100]</td>
+            </tr>
+            <tr>
+                <td><b>Energy</b></td>
+                <td>[0, 1000] </td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class="padded_section project_section standout_section centered">
+        <div class="p-25">
+            <h1>Food Sources</h1>
+            <p>Food will be spawned according to three types.</p>
+        </div>
+        <table class="cute_table">
+            <tr>
+                <th><h3>Food Type</h3></th>
+                <th><h3>Spawn Chance</h3></th>
+                <th><h3>Size Given</h3></th>
+                <th><h3>Energy Given</h3></th>
+            </tr>
+            <tr>
+                <td><b>Survival</b></td>
+                <td>(s_chance %)</td>
+                <td>+1 Size</td>
+                <td>1/4 refill energy</td>
+            </tr>
+            <tr>
+                <td><b>Beneficial</b></td>
+                <td>(b_chance %)</td>
+                <td>+2 Size</td>
+                <td>1/2 refill energy</td>
+            </tr>
+            <tr>
+                <td><b>Nutrutious</b></td>
+                <td>(n_chance %)</td>
+                <td>+4 Size</td>
+                <td>Full refill energy</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class="padded_section project_section alternate_section">
+        <h1>Doubling // Splitting</h1>
+        <p><br>&nbsp;&nbsp;&nbsp;&nbsp; When a creatures reaches its SPlitting Factor Size, it will divide itself into the next generation.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; THe first draft will maintain the exact genetics of the creature's predecessor
+            <br>&nbsp;&nbsp;&nbsp;&nbsp; Future drafts will allow for minor mutations
+        </p>
+    </div>
+    <hr>
+    <div class="padded_section project_section  standout_section">
+        <h1>Energy Drain & Movement Mapping</h1>
+        <p> Each creature is hunting <b>one specific food object</b>. <br>
+            This object will appear far away to small creatures, and close to large creatures.<br>
+            This is implemented by creating a <b>Relative Energy Unit</b> to each creature.</p>
+        <br><br>
+        <h3>Relative Energy Unit</h3>
+        <table style="width:100%">
+            <tr>
+                <td><img style="width:100%; max-width: 450px" alt = "" src = ../Resources/Images/Energy_unit_0.png>
+                    <p class="sub_image">Each creature is assigned their own energy-unit size.</p></td>
+                <td style="padding-left:50px">
+                    For each creature, the distance between them and the food is converted into "how much energy is needed"<br>
+                    In this situation, energy is a relative percentage drained (larger creatures SHOULD use more to move and have to move less, however that is not taken into account in this version of the program)<br>
+                    One energy unit is the equivalent to the length of the diagonal of a triangle with...<br><br>
+                    <table>
+                        <tr>
+                            <td>Length -></td>
+                            <td>CREATURE SIZE</td>
+                        </tr>
+                        <tr>
+                            <td>Height -></td>
+                            <td>CREATURE SIZE</td>
+                        </tr>
+                    </table>
+                    <br>Therefore, the length of one Energy Unit is the equivalent to <b>SQRT( SIZE^2 + SIZE^2 )</b>
+                </td>
+            </tr>
+            <tr>
+                <td><img style="width:100%; max-width: 450px" alt = "" src = "../Resources/Images/Energy_unit_1.png">
+                    <p class="sub_image">The Enegery unit is the hypotenuse of a creature's hitbox</p></td>
+                <td style="padding-left:50px">
+                    Creating a hitbox around the creature (a square with length of creature size and a height of creature size), <br>
+                    A diagonal is calculated between the bottom-left & top right corners.<br>
+                    The length of this diagonal is the equivilent of one energy unit.<br><br>
+                    All distaces between a creature and a food object are converted into these units, and each step drains the appropriate energy from the creature.<br>
+                    If the creature runs out of energy without reaching a food obejct, it will die.
+                </td>
+            </tr>
+
+        </table>
+        <div style="text-align:center;width:100%">
+            <img style="max-height: 500px; border:solid 1px black;" alt = "" src = ../Resources/Images/Energy_unit_3.png>
+            <p class="sub_image">An example of two creatures racing for the same piece of food.</p>
+        </div>
+    </div>
+
+    <hr>
+    <script>
+        var gallery = document.querySelector('.gallery');
+        var galleryItems = document.querySelectorAll('.gallery-item');
+        var itemWidth = 20; // percent: as set in css
+
+        var featured = document.querySelector('.featured-item');
+
+        var leftBtn = document.querySelector('.move-btn.left');
+        var rightBtn = document.querySelector('.move-btn.right');
+        var leftInterval;
+        var rightInterval;
+
+        var scrollRate = 0.2;
+        var left;
+
+        function selectItem(e) {
+            if (e.target.classList.contains('active')) return;
+
+            featured.style.backgroundImage = e.target.style.backgroundImage;
+
+            for (var i = 0; i < galleryItems.length; i++) {
+                if (galleryItems[i].classList.contains('active'))
+                    galleryItems[i].classList.remove('active');
+            }
+
+            e.target.classList.add('active');
+        }
+
+        function galleryWrapLeft() {
+            var first = gallery.children[0];
+            gallery.removeChild(first);
+            gallery.style.left = -itemWidth + '%';
+            gallery.appendChild(first);
+            gallery.style.left = '0%';
+        }
+
+        function galleryWrapRight() {
+            var last = gallery.children[gallery.children.length - 1];
+            gallery.removeChild(last);
+            gallery.insertBefore(last, gallery.children[0]);
+            gallery.style.left = '-20%';
+        }
+
+        function moveLeft() {
+            left = left || 0;
+
+            leftInterval = setInterval(function() {
+                gallery.style.left = left + '%';
+
+                if (left > -itemWidth) {
+                    left -= scrollRate;
+                } else {
+                    left = 0;
+                    galleryWrapLeft();
+                }
+            }, 1);
+        }
+
+        function moveRight() {
+            //Make sure there is element to the leftd
+            if (left > -itemWidth && left < 0) {
+                left = left  - itemWidth;
+
+                var last = gallery.children[gallery.children.length - 1];
+                gallery.removeChild(last);
+                gallery.style.left = left + '%';
+                gallery.insertBefore(last, gallery.children[0]);
+            }
+
+            left = left || 0;
+
+            leftInterval = setInterval(function() {
+                gallery.style.left = left + '%';
+
+                if (left < 0) {
+                    left += scrollRate;
+                } else {
+                    left = -itemWidth;
+                    galleryWrapRight();
+                }
+            }, 1);
+        }
+
+        function stopMovement() {
+            clearInterval(leftInterval);
+            clearInterval(rightInterval);
+        }
+
+        leftBtn.addEventListener('mouseenter', moveLeft);
+        leftBtn.addEventListener('mouseleave', stopMovement);
+        rightBtn.addEventListener('mouseenter', moveRight);
+        rightBtn.addEventListener('mouseleave', stopMovement);
+
+
+        //Start this baby up
+        (function init() {
+            var images = [
+                "../Resources/Images/Evolution_logo.png",
+                "../Resources/Images/Evolution_logo.png"
+            ];
+
+            //Set Initial Featured Image
+            featured.style.backgroundImage = 'url(' + images[0] + ')';
+
+            //Set Images for Gallery and Add Event Listeners
+            for (var i = 0; i < galleryItems.length; i++) {
+                galleryItems[i].style.backgroundImage = 'url(' + images[i] + ')';
+                galleryItems[i].addEventListener('click', selectItem);
+            }
+        })();
+    </script>
+</body>
+</html>

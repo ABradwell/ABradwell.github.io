@@ -14,6 +14,7 @@
 
     display: inline-block;
     flex-wrap: wrap-reverse ;
+
 }
 @supports (display: grid) {
     .header_button_holder {
@@ -74,6 +75,9 @@ div.homepage_name_div {
     display: inline-block;
     height:100%;
     line-height:100%;
+
+    transition: min-width 0.25s;
+    cursor: pointer;
 }
 
 .header_button_li {
@@ -101,13 +105,6 @@ div.homepage_name_div {
     padding-left: 10px;
     padding-right: 5px;
     padding-bottom: 100px;
-}
-
-.padded_section {
-    padding-top: 25px;
-    padding-left: 10px;
-    padding-right: 50px;
-    padding-bottom: 100px
 }
 
 .horizontal_scroll_list {
@@ -173,9 +170,10 @@ div.homepage_name_div {
 
     padding: 10px 10px;
 
+    transition: all 0.5ms;
+
     margin-right: 25px;
     margin-bottom: 25px;
-
 
 }
 
@@ -244,28 +242,6 @@ a.link_block:hover {
     color: white;
     border-color: black;
 }
-
-.alternate_section {
-    background-color: var(--bg-main-alternate);
-    color: var(--text-color-standout);
-}
-
-.alternate_block {
-    background-color: var(--bg-main);
-    color: var(--text-color-standout);
-}
-
-.standout_section {
-    background-color: var(--bg-standout);
-    color: var(--text-color-standout);
-}
-
-.standout_block {
-    background-color: var(--bg-main);
-    color: var(--text-color-main);
-}
-
-
 
 h4.project_title {
     font-family: var(--font-family-h);
