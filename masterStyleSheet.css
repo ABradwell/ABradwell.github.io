@@ -84,20 +84,28 @@ footer {
 .header_container {
     position: relative;
     text-align: center;
-    background-color: white;
+    /*background-color: white;*/
     color: black;
+    /*z-index: 999;*/
 }
 
+.simple_evolution_image {
+    background-image: url("Resources/Images/Evolution_logo.png");
+}
 .header_image {
 
+    /*margin-left: 0;*/
+    /*margin-top:50px;*/
     margin: 0;
     padding: 0;
 
-    opacity: 0.1;
+    opacity: 0.5;
 
     object-fit: cover;
-    height: 350px;
+    min-height: 350px;
     width:100%;
+
+    /*z-index: 999;*/
 }
 
 .project_title {
@@ -106,6 +114,8 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     color:black;
+
+    /*z-index: 999;*/
 }
 
 

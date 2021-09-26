@@ -4,15 +4,79 @@
     <meta charset="UTF-8" name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../masterStyleSheet.css">
     <link rel="stylesheet" type="text/css" href="../projects.css">
+    <link rel="stylesheet" type="text/css" href="../responsive_header.css">
+
     <!--        <link rel="stylesheet" type="text/css" href="masterStyleSheet.css">-->
     <title>Aiden Stevenson Bradwell</title>
+
 </head>
+
+<!--<header id="includedContent">-->
+
+<!--</header>-->
+<!--<script>-->
+<!--    $("#includedContent").load("/../responsive_header.html");-->
+<!--</script>-->
+<div class="header">
+    <nav class="navbar">
+        <a href="#" class="nav-logo">Aiden Stevenson Bradwell</a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Resumes</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Work Experience</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Education</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Articles</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+</div>
+
+<div class="header_container header_image simple_evolution_image">
+<!--    <img class="header_image" src="../Resources/Images/Evolution_logo.png">-->
+    <h1 class="project_title"><b>SIMPLE EVOLUTION</b></h1>
+    <!--        <p class="project_title">Single cell organisms in competition for survival.</p>-->
+</div>
+
 <body>
-    <div class="header_container">
-        <img class="header_image" src="../Resources/Images/Evolution_logo.png">
-        <h1 class="project_title"><b>SIMPLE EVOLUTION</b></h1>
-<!--        <p class="project_title">Single cell organisms in competition for survival.</p>-->
-    </div>
+
     <div class="padded_section project_section side_split_reflexive ">
         <div class="side_split_reflexive_inner">
             <h1 style="text-align:center">Overview</h1>
