@@ -80,22 +80,12 @@ footer {
     min-height: 100px;
 }
 
-
-.header_container {
+.header_image {
     position: relative;
     text-align: center;
-    /*background-color: white;*/
+
     color: black;
-    /*z-index: 999;*/
-}
 
-.simple_evolution_image {
-    background-image: url("Resources/Images/Evolution_logo.png");
-}
-.header_image {
-
-    /*margin-left: 0;*/
-    /*margin-top:50px;*/
     margin: 0;
     padding: 0;
 

@@ -1,3 +1,49 @@
+:root {
+
+    --bg-highlight: white;
+    --text-color-highlight: black;
+
+    --color-scheme-a-1: rgb(255, 183, 183);
+    --color-scheme-a-2: rgb(255, 206, 183);
+    --color-scheme-a-3: rgb(255, 230, 183);
+    --color-scheme-a-4: rgb(248, 255, 183);
+    --color-scheme-a-5: rgb(239, 255, 183);
+
+    --color-scheme-b-1: rgb(148, 212, 255);
+    --color-scheme-b-2: rgb(148, 176, 255);
+    --color-scheme-b-3: rgb(148, 164, 255);
+    --color-scheme-b-4: rgb(148, 150, 255);
+    --color-scheme-b-5: rgb(180, 148, 255);
+
+    --color-scheme-c-1: rgb(178, 255, 134);
+    --color-scheme-c-2: rgb(134, 255, 174);
+    --color-scheme-c-3: rgb(134, 255, 188);
+    --color-scheme-c-4: rgb(134, 255, 205);
+    --color-scheme-c-5: rgb(134, 247, 255);
+
+    --font-family-header: 'Tahoma';
+    --font-family-h: 'Tahoma';
+
+}
+.diva1 {background-color: var(--color-scheme-a-1);}
+.diva2 {background-color: var(--color-scheme-a-2);}
+.diva3 {background-color: var(--color-scheme-a-3);}
+.diva4 {background-color: var(--color-scheme-a-4);}
+.diva5 {background-color: var(--color-scheme-a-5);}
+
+.divb1 {background-color: var(--color-scheme-b-1);}
+.divb2 {background-color: var(--color-scheme-b-2);}
+.divb3 {background-color: var(--color-scheme-b-3);}
+.divb4 {background-color: var(--color-scheme-b-4);}
+.divb5 {background-color: var(--color-scheme-b-5);}
+
+.divc1 {background-color: var(--color-scheme-c-1);}
+.divc2 {background-color: var(--color-scheme-c-2);}
+.divc3 {background-color: var(--color-scheme-c-3);}
+.divc4 {background-color: var(--color-scheme-c-4);}
+.divc5 {background-color: var(--color-scheme-c-5);}
+
+
 .main_body {
     color: black;
     background-color: var(--bg-main);
@@ -5,17 +51,6 @@
     padding: 25px 25px;
 }
 
-.section_text {
-
-}
-
-.section_image {
-
-}
-
-.highlight_div {
-
-}
 
 td, th {
     text-align: left;
@@ -31,11 +66,100 @@ td, th {
     background-color: rgba(0, 226, 238, 0.1);
 }
 
-* {
-    box-sizing: border-box;
+.highlight_section {
+    min-height:100px;
+    justify-content: center;
+    list-style-type: none;
+
+    display: inline-block;
+    flex-wrap: wrap-reverse;
+    flex-wrap: initial;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.highlight_data {
+    width: 100%;
+}
+
+.highlight_gallary {
+    margin: 0 auto;
+    width: 75%;
+    padding-left:24px;
+}
+
+.project_page {}
+
+
+/* For singluar rows. */
+.data_holder_single {
+    display: table;
+    margin: 0 auto;
+    width:75%;
+}
+
+.info_section {
+    border-radius: 25px;
+    border: 1px solid black;
+    display: table;
+    margin: 0 auto;
+    
+    padding:25px;
+}
+
+.info_section > h1 {}
+
+.info_section > p {}
+
+br {
+    min-height:50px;
+}
+/* For double-bubble infor rows */
+.data_holder_double {
+    display: table;
+    margin: 0 auto;
+    width:75%;
+
+    list-style-type: none;
+
+    display: inline-block;
+    flex-wrap: wrap-reverse;
+
+    column-gap: 5%;
+    row-gap: 50px;
+}
+@supports (display: grid) {
+    .data_holder_double {
+        flex-wrap: initial;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    @media (min-width: 950px) {
+        .data_holder_double {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
 
 
+/* For image / text boxes */
+.inner_img {}
+
+.inner_data {
+    
+}
+
+
+
+
+
+.section_title {}
+
+
+
+
+
+/* This CSS is for the rotating image gallary on the top of the page. no all pages have this, and some will instead have a static image. */
 .centered_container {
     text-align: center;
     align-content: center;
@@ -62,7 +186,7 @@ td, th {
 }
 
 
-/* Useful Classes */
+Useful Classes
 .transition {
     transition: all 350ms ease-in-out;
 }
@@ -103,19 +227,19 @@ td, th {
 
 .controls {
     font-size: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-top: none;
 }
 .move-btn {
     display: inline-block;
     width: 50%;
-    border: none;
-    color: #ff0505;
-    background-color: transparent;
-    padding: 0.2em 1.5em;
+    color: black;
+
 }
-.move-btn:first-child {border-right: none;}
+/* .move-btn:first-child {border-right: none;}
 .move-btn.left  { cursor: w-resize; }
-.move-btn.right { cursor: e-resize; }
+.move-btn.right { cursor: e-resize; } */
 
 
 
