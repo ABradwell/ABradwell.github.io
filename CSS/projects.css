@@ -86,6 +86,8 @@ td, th {
     margin: 0 auto;
     width: 75%;
     padding-left:24px;
+
+    border-color:blue;
 }
 
 .project_page {}
@@ -149,103 +151,8 @@ br {
     
 }
 
-
-
-
-
 .section_title {}
 
-
-
-
-
-/* This CSS is for the rotating image gallary on the top of the page. no all pages have this, and some will instead have a static image. */
-.centered_container {
+.github_holder {
     text-align: center;
-    align-content: center;
-    align-items: center;
-
-    width:100%;
-    padding-left: 15px;
-    padding-right:15px;
-
-    border: solid;
-
-}
-
-/* https://www.sliderrevolution.com/resources/css-gallery/ */
-.container {
-
-    text-align: center;
-
-    /*margin: 15px auto;*/
-    max-width: 750px;
-    max-height: 100vh;
-    background-color: white;
-    margin-left:0;
-}
-
-
-Useful Classes
-.transition {
-    transition: all 350ms ease-in-out;
-}
-
-.r-3-2 {
-    width: 100%;
-    padding-bottom: 66.667%;
-    background-color: #ddd;
-}
-
-.image-holder {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-/* Main Styles */
-.gallery-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery {
-    position: relative;
-    white-space: nowrap;
-    font-size: 0;
-}
-
-.item-wrapper {
-    cursor: pointer;
-    width: 20%; /* arbitrary value */
-    display: inline-block;
-    background-color: white;
-}
-
-.gallery-item { opacity: 0.5; }
-.gallery-item.active { opacity: 1; }
-
-.controls {
-    font-size: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-top: none;
-}
-.move-btn {
-    display: inline-block;
-    width: 50%;
-    color: black;
-
-}
-/* .move-btn:first-child {border-right: none;}
-.move-btn.left  { cursor: w-resize; }
-.move-btn.right { cursor: e-resize; } */
-
-
-
-.sub_image {
-    color:grey;
-    font-size:12px;
-    text-align:center;
-    margin-top: 3px;
 }

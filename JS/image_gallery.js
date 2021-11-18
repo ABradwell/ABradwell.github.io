@@ -1,6 +1,7 @@
 
 var img_idx = 0;
 var images;
+var captions;
 
 function changeLeft() {
 
@@ -10,7 +11,8 @@ function changeLeft() {
         img_idx = img_idx -1;
     }
 
-    featured.style.backgroundImage = 'url(' + images[img_idx] + ')';
+    img.src = images[img_idx];
+    cap.textContent = captions[img_idx]
 }
 
 function changeRight() {
@@ -20,5 +22,6 @@ function changeRight() {
     }
 
     img_idx = img_idx + 1;
-    featured.style.backgroundImage = 'url(' + images[img_idx] + ')';
+    img.src = images[img_idx];
+    cap.textContent = captions[img_idx]
 }

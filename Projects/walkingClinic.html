@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name = "Walk in Clinic" content = "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/masterStyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/projects.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/responsive_header.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/gallery.css">
+    <script src="../JS/image_gallery.js" type="text/javascript"></script>
+
+
+    <title>Aiden Stevenson Bradwell</title>
+
+</head>
+
+<div class="header">
+    <nav class="navbar">
+        <a href="#" class="nav-logo">Aiden Stevenson Bradwell</a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Resumes</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Work Experience</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Education</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Articles</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+</div>
+
+<div class="header_image" style="background-image: url('../Resources/Images/Android/background_dark.png');">
+    <h1 class="project_title"><b>Walk-In Clinic App</b></h1>
+</div>
+
+<body class = "project_page">
+
+    <div class="highlight_grid">
+        <div class="text_section">
+            <h1 > Overview</h1>
+                <h3>Data</h3>
+                <p><b>Author:</b> Aiden Stevenson Bradwell, Logan Rose, Lillian Ly, John Brar, Tanner Buchannan</p>
+                <p><b>Affiliation:</b> University of Ottawa</p>
+                <p><b>Date:</b> April 3rd, 2019</p>
+                <p><b>Concepts Used:</b> Firebase Authentication, Booking System, Android Application, Team Development, Andriod Studio</p>
+
+                <br><br>
+                <h3>About Program:</h3>
+                <p>Including 3 account types, each being authenticated upon creation to have a proper username and password, 
+                    this app allows a range of functionality. Clinics can create their account, advertise what they offer, 
+                    and open slots for patients to book. Patients can log in, search for clinics by name or service, book appointments, 
+                    and leave ratings. Admins can choose which services are possible to offer, delete accounts, and control 
+                    the overall network [1 admin account].</p> 
+        </div>
+        <div class="image_section">
+            <div class="inner_image_section">
+                <img class="featured_image" id="image"/>
+                <span class="image_subtitle" id="caption">...caption...</span>
+            </div>
+        </div>
+        <button class="left_button">&laquo;</button>
+        <button class="right_button">&raquo;</button>
+    </div>
+    <br><br>
+    <div class="github_holder"> 
+        <a style="align-self: center;" href="https://github.com/professor-forward/Pear_Studios"><img src="../Resources/GitHub-Emblem.png" width="250" height="125"></a>
+    </div>
+    <br><br>
+    <div class="data_holder_double ">
+        <div class = "info_section divc1">
+            <h1 >Firebase Authentication & Storage</h1>
+            <p>Each login is authenticated through the FireStone FireBase Authentication System, 
+                which affirms that an entered email is valid, and then creates a registered account attached to it. 
+                The data for these accounts, as well as for all attributes of the app, are then stored in a custom database system.
+				<b>Skills Used:</b> Authentication Implementation, App Design, Android Studio, Database Design and Implementation</p>
+        </div>
+
+        <div class="info_section divc2">
+            <h1>Admin Functionality</h1>
+            <p> With an immutable admin account, the application allows for one to 
+                remove or add potential services, as well as manage and remove users
+                 from the database. It includes an updated list of all Users and Clinics,
+                  taken from the online database system</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="data_holder_double ">
+        <div class = "info_section divc3">
+            <h1 >Clinic Functionality</h1>
+            <p>A clinic registers with its information, and can then actively adjust which 
+                services they offer, as well as the times which patients can book in with a doctor. 
+                They have a rating, and a current wait time, and are actively updated in the 
+                search results based on their name and service they offer. </p>
+        </div>
+
+        <div class="info_section divc4">
+            <h1>Patient Functionality</h1>
+            <p>A patient has the ability to search for clinics, book an appointment in their 
+                available slots, and leave a rating for the clinic after doing so. The patient’s 
+                database contains stored appointments that they have made.</p>
+        </div>
+    </div>
+    <br><br>
+    <hr>
+    <!-- THIS SCRIPT IS REQUIRED FOR ALL USE OF THE GALLARY. INCLUDE IT IN ALL PROJECT PAGES. -->
+    <script>
+        var img = document.getElementById('image');
+        var cap = document.getElementById('caption');
+        var leftBtn = document.querySelector('.left_button');
+        var rightBtn = document.querySelector('.right_button');
+
+        leftBtn.addEventListener('click', changeLeft);
+        rightBtn.addEventListener('click', changeRight);
+
+        //Start this baby up
+        (function init() {
+            images = [
+                "../Resources/Images/Android/ss_database.png",
+                "../Resources/Images/Android/ss_admin.png",
+                "../Resources/Images/Android/ss_employee.png",
+                "../Resources/Images/Android/ss_patient_search.png",
+            ];
+            captions = [
+                "Firebase Authentication database.",
+                "Admin account login screen.",
+                "Employee account login screen.",
+                "Patient search results.",
+            ];
+            //Set Initial Featured Image
+            img.src = images[0];
+            cap.textContent = captions[0]
+        })();
+    </script>
+</body>
+<br><br>
+</html>

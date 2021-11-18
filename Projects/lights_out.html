@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" name = "Lights Out" content = "width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../CSS/masterStyleSheet.css">
     <link rel="stylesheet" type="text/css" href="../CSS/projects.css">
     <link rel="stylesheet" type="text/css" href="../CSS/responsive_header.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/gallery.css">
     <script src="../JS/image_gallery.js" type="text/javascript"></script>
 
     <!--        <link rel="stylesheet" type="text/css" href="masterStyleSheet.css">-->
@@ -12,12 +13,6 @@
 
 </head>
 
-<!--<header id="includedContent">-->
-
-<!--</header>-->
-<!--<script>-->
-<!--    $("#includedContent").load("/../responsive_header.html");-->
-<!--</script>-->
 <div class="header">
     <nav class="navbar">
         <a href="#" class="nav-logo">Aiden Stevenson Bradwell</a>
@@ -70,43 +65,44 @@
     </script>
 </div>
 
-<div class="header_image" style="background-image: url('../Resources/Images/lightsout/background.png');">
+<div class="header_image" style="background-image: url('../Resources/Images/lightsout/Darkened_blackout.png');">
     <h1 class="project_title"><b>Lights Out Game</b></h1>
 </div>
 
 <body class = "project_page">
-    <div class="data_holder_single">
-        <div class="highlight_section">
-            <div class="highlight_data">
-                <h1 > Overview</h1>
-                <h3>Data</h3>
-                <p><b>Author:</b> Aiden Stevenson Bradwell</p>
-                <p><b>Affiliation:</b> University of Ottawa</p>
-                <p><b>Date:</b> April 3rd, 2019</p>
-                <p><b>Software Used:</b> Model-View-Controller, Breath First Searching Algorithm, 2d Array’s, and Interactive UI</p>
+    <div class="highlight_grid">
+        <div class="text_section">
+            <h1 > Overview</h1>
+            <h3>Data</h3>
+            <p><b>Author:</b> Aiden Stevenson Bradwell</p>
+            <p><b>Affiliation:</b> University of Ottawa</p>
+            <p><b>Date:</b> April 3rd, 2019</p>
+            <p><b>Concepts Used:</b> Model-View-Controller, Breath First Searching Algorithm, and Interactive UI, Java Visuals</p>
 
-                <br><br>
-                <h3>About Program:</h3>
-                <p></p>
-            </div>
-            <div class="highlight_gallary">
-                <!--  GALLERY FOR DIFFERENT SCREENSHOTS OF THE PROGRAM  -->
-                <div class="centered_container" style="max-width: 750px;">
-                    <div class="container">
-                        <div class="feature">
-                            <figure class="featured-item image-holder r-3-2 transition" style="margin-left:0"></figure>
-                        </div>
-                        <div class="controls">
-                            <button class="move-btn left">&laquo;</button>
-                            <button class="move-btn right">&raquo;</button>
-                        </div>
-                    </div>
-                </div>
+            <br><br>
+            <h3>About Program:</h3>
+            <p>Use is able to choose a starting dimension for the board, upon which a randomized starting setting is shown. The user can then Reset the board, Begin a new game, or display the solution to the current board. <br> 
+                <br>
+                <b>Winning objective:</b> <br>
+                    Click the lights on the board <br>
+                    Each light clicked will invert its surroundings <br>
+                    The goal is to turn off all lights on the board </p>
+        </div>
+        <div class="image_section">
+            <div class="inner_image_section">
+                <img class="featured_image" id="image"/>
+                <span class="image_subtitle" id="caption">...caption...</span>
             </div>
         </div>
+        <button class="left_button">&laquo;</button>
+        <button class="right_button">&raquo;</button>
     </div>
     <br><br>
     <hr>
+    <br><br>
+    <div class="github_holder"> 
+        <a style="align-self: center;" href="https://github.com/ABradwell/Portfolio/tree/master/Java/Lights%20Out%20w%20Visuals"><img src="../Resources/GitHub-Emblem.png" width="250" height="125"></a>
+    </div>
     <br><br>
     <hr>
     <br><br>
@@ -156,19 +152,13 @@
         </div>
     </div>
     <br><br>
-    <!-- <div class="data_holder_single">
-        <div class = "info_section diva3">
-            <h1>Title 3</h1>
-            <p>Content 3</p>
-        </div>
-    </div> -->
-
     <hr>
     <!-- THIS SCRIPT IS REQUIRED FOR ALL USE OF THE GALLARY. INCLUDE IT IN ALL PROJECT PAGES. -->
     <script>
-        var featured = document.querySelector('.featured-item');
-        var leftBtn = document.querySelector('.move-btn.left');
-        var rightBtn = document.querySelector('.move-btn.right');
+        var img = document.getElementById('image');
+        var cap = document.getElementById('caption');
+        var leftBtn = document.querySelector('.left_button');
+        var rightBtn = document.querySelector('.right_button');
 
         leftBtn.addEventListener('click', changeLeft);
         rightBtn.addEventListener('click', changeRight);
@@ -182,8 +172,15 @@
                 "../Resources/Images/lightsout/randomize.png",
                 "../Resources/Images/lightsout/victory.png",
             ];
-            //Set Initial Featured Image
-            featured.style.backgroundImage = 'url(' + images[0] + ')';
+            captions = [
+                "Firebase Authentication database.",
+                "Admin account login screen.",
+                "Employee account login screen.",
+                "Patient search results.",
+            ];
+             //Set Initial Featured Image
+            img.src = images[0];
+            cap.textContent = captions[0]
         })();
     </script>
 </body>

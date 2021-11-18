@@ -33,6 +33,7 @@
     padding: 1rem 1.5rem;
     z-index: 1;
     opacity: 1;
+    min-height:100px;
 }
 
 .header .hamburger {
@@ -75,9 +76,9 @@
     color: #000000;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1200px) {
     .header .nav-menu {
-        position: fixed;
+        position: absolute;
         left: -100%;
         top: 5rem;
         flex-direction: column;
@@ -88,7 +89,6 @@
         transition: 0.3s;
         box-shadow:
                 0 10px 27px rgba(0, 0, 0, 0.05);
-
         z-index: 1;
     }
 

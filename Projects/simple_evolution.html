@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" name = "Personal Site of Aiden Stevenson Bradwell" content = "width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" name = "Simple Evolution" content = "width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../CSS/masterStyleSheet.css">
     <link rel="stylesheet" type="text/css" href="../CSS/projects.css">
     <link rel="stylesheet" type="text/css" href="../CSS/responsive_header.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/gallery.css">
     <script src="../JS/image_gallery.js" type="text/javascript"></script>
+
 
     <!--        <link rel="stylesheet" type="text/css" href="masterStyleSheet.css">-->
     <title>Aiden Stevenson Bradwell</title>
@@ -70,41 +72,46 @@
     </script>
 </div>
 
-<div class="header_image" style="background-image: url('../Resources/Images/Evolution_logo.png');">
+<div class="header_image" style="background-image: url('../Resources/Images/simpleCreatures/background.png');">
     <h1 class="project_title"><b>SIMPLE EVOLUTION</b></h1>
 </div>
 
 <body class = "project_page">
-    <div class="data_holder_single">
-        <div class="highlight_section">
-            <div class="highlight_data">
-                <h1 > Overview</h1>
+
+
+    <div class="highlight_grid">
+        <div class="text_section"> 
+            <h1> Overview</h1>
+                <h3>Data</h3>
+                <p><b>Author:</b> Aiden Stevenson Bradwell</p>
+                <p><b>Affiliation:</b> University of Ottawa</p>
+                <p><b>Date:</b> September 25th, 2021</p>
+                <p><b>Concepts Used:</b> Pointer Arithmetic, C++, Data structures & Algorithms, Class modification</p>
+                <br><br>
+                <h3>About Program:</h3>
                 <p>
                     The included program aims to create a simulation of very VERY simple evolutionary tendencies.<br><br>
                     A random selection of creatures (represented by some colored circle), which will then begin to compete for food.<br><br>
                     These creatures will begin with some random selection of abiltiies. AS they split, these qualtiies will spread to their decendants.<br><br><br>
 
                     Along side the program is an information window describing which generations were created, survived, and which were culled.
-                </p>
+                </p> 
             </div>
-            <div class="highlight_gallary">
-                <!--  GALLERY FOR DIFFERENT SCREENSHOTS OF THE PROGRAM  -->
-                <div class="centered_container" style="max-width: 1500;">
-                    <div class="container">
-                        <div class="feature">
-                            <figure class="featured-item image-holder r-3-2 transition" style="margin-left:0"></figure>
-                        </div>
-                        <div class="controls">
-                            <button class="move-btn left">&laquo;</button>
-                            <button class="move-btn right">&raquo;</button>
-                        </div>
-                    </div>
-                </div>
+        <div class="image_section">
+            <div class="inner_image_section">
+                <img class="featured_image transition" id="image"/>
+                <span class="image_subtitle" id="caption">...caption...</span>
             </div>
         </div>
+        <button class="left_button">&laquo;</button>
+        <button class="right_button">&raquo;</button>
     </div>
     <br><br>
     <hr>
+    <br><br>
+    <div class="github_holder"> 
+        <a href="https://github.com/ABradwell/SingleCellSurvival"><img src="../Resources/GitHub-Emblem.png" width="250" height="125"></a>
+    </div>
     <br><br>
     <hr>
     <br><br>
@@ -236,8 +243,8 @@
         </div>
     </div>
     <br><br>
-    <div class="data_holder_single diva5">
-        <div class="info_section ">
+    <div class="data_holder_single">
+        <div class="info_section diva5">
             <h1>Conclusions</h1>
             <p>Interestingly, finding the relation between these variables has been odd. Below is a test design to find a connection between the variables. <br> 
                 The intention of this is to find some combination of starting creatures-starting food, energy formula, etc which creates a useful program.<br>
@@ -249,16 +256,19 @@
                 **DATA IN PROGRESS OF COLLECTION**
         </div>
     </div>
+    <br>
+    <br>
     <hr>
     <!-- THIS SCRIPT IS REQUIRED FOR ALL USE OF THE GALLARY. INCLUDE IT IN ALL PROJECT PAGES. -->
     <script>
-        var featured = document.querySelector('.featured-item');
-        var leftBtn = document.querySelector('.move-btn.left');
-        var rightBtn = document.querySelector('.move-btn.right');
+
+        var img = document.getElementById('image');
+        var cap = document.getElementById('caption');
+        var leftBtn = document.querySelector('.left_button');
+        var rightBtn = document.querySelector('.right_button');
 
         leftBtn.addEventListener('click', changeLeft);
         rightBtn.addEventListener('click', changeRight);
-
 
         //Start this baby up
         (function init() {
@@ -268,8 +278,17 @@
                 "../Resources/Images/Energy_unit_1.png",
                 "../Resources/Images/Energy_unit_3.png",
             ];
+            captions = [
+                "Program logo.",
+                "Size Caluclation of One Creature.",
+                "length of one Energy unit for a given creature.",
+                "Calculation traveling energy requirement.",
+            ];
             //Set Initial Featured Image
-            featured.style.backgroundImage = 'url(' + images[0] + ')';
+            img.src = images[0];
+            cap.textContent = captions[0]
+            
+
         })();
     </script>
 </body>

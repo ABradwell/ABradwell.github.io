@@ -84,14 +84,15 @@ footer {
     position: relative;
     text-align: center;
 
-    color: black;
+    /* color: black; */
 
     margin: 0;
     padding: 0;
 
-    opacity: 0.5;
+    /* opacity: 0.5; */
 
     object-fit: cover;
+    background-size:cover;
     min-height: 350px;
     width:100%;
 
@@ -103,7 +104,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color:black;
+    color:rgb(255, 255, 255);
 
     /*z-index: 999;*/
 }
@@ -337,4 +338,8 @@ nav li a.turq:active {
     text-align: center;
     align-items: center;
     align-content: center;
+}
+
+.transition {
+    transition: all 350ms ease-in-out;
 }
