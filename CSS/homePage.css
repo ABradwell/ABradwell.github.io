@@ -164,7 +164,7 @@ div.homepage_name_div {
 
     border-style: solid;
 
-    white-space: normal;
+    white-space: nowrap;
     display: inline-block;
     line-height:100%;
 
