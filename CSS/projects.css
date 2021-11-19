@@ -15,11 +15,17 @@
     --color-scheme-b-4: rgb(148, 150, 255);
     --color-scheme-b-5: rgb(180, 148, 255);
 
-    --color-scheme-c-1: rgb(178, 255, 134);
+    --color-scheme-c-1: rgb(134, 255, 134);
     --color-scheme-c-2: rgb(134, 255, 174);
     --color-scheme-c-3: rgb(134, 255, 188);
     --color-scheme-c-4: rgb(134, 255, 205);
     --color-scheme-c-5: rgb(134, 247, 255);
+
+    --color-scheme-d-1: rgb(230, 134, 243);
+    --color-scheme-d-2: rgb(255, 134, 220);
+    --color-scheme-d-3: rgb(243, 134, 188);
+    --color-scheme-d-4: rgb(243, 134, 152);
+    --color-scheme-d-5: rgb(243, 134, 128);
 
     --font-family-header: 'Tahoma';
     --font-family-h: 'Tahoma';
@@ -42,6 +48,12 @@
 .divc3 {background-color: var(--color-scheme-c-3);}
 .divc4 {background-color: var(--color-scheme-c-4);}
 .divc5 {background-color: var(--color-scheme-c-5);}
+
+.divd1 {background-color: var(--color-scheme-d-1);}
+.divd2 {background-color: var(--color-scheme-d-2);}
+.divd3 {background-color: var(--color-scheme-d-3);}
+.divd4 {background-color: var(--color-scheme-d-4);}
+.divd5 {background-color: var(--color-scheme-d-5);}
 
 
 .main_body {

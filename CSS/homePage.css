@@ -155,7 +155,7 @@ div.homepage_name_div {
     padding-right: 0px;
     padding-bottom: 0px;
 
-    /*white-space: nowrap;*/
+    white-space: nowrap;
 }
 
 .linear_block {
@@ -164,7 +164,7 @@ div.homepage_name_div {
 
     border-style: solid;
 
-    white-space: nowrap;
+    white-space: normal;
     display: inline-block;
     line-height:100%;
 
