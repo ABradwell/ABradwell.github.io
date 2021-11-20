@@ -141,8 +141,8 @@ div.homepage_name_div {
     margin-right: 15px;
 }
 .scroll_block:hover {
-    background-color: rgba(63, 0, 0, 0.44);
-    opacity: 0.3;
+    background-color: rgba(173, 173, 173, 0.726);
+    /* opacity: 0.3; */
 }
 
 
