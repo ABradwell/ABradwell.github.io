@@ -1,0 +1,87 @@
+
+
+
+.main_layout {
+    display: grid;
+    width: 95%;
+    margin: 0 auto;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+    "image   image    image"
+    "name   name     name"
+    "degree   degree   degree"
+    "about  about    about"
+    "contact  .    interests";
+}
+
+
+/* For large displays */
+@media (min-width:1050px) {
+    .main_layout {
+        display: grid;
+        width: 70%;
+        margin: 0 auto;
+        grid-template-columns: 1fr, 1fr, 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        "image   image    image"
+        "name   name     name"
+        "degree   degree   degree"
+        "about  about    about"
+        "contact  .    interests";
+    }
+}   
+
+
+.about_pic_div {
+    grid-area:image;
+    margin: 0 auto;
+}
+
+.about_pic {
+    height:100%;
+    max-height:500px;
+    border: 4px black solid;
+}
+
+@media (min-width:1050px) {
+    .about_pic {
+        width:100%;
+        height:auto;
+        border: 4px black solid;
+    }
+}
+
+
+.name_div {
+    grid-area:name;
+    text-align: center;
+    /* border: 4px red solid; */
+}
+
+.degree_div {
+    grid-area:degree;
+    text-align: center;
+    
+    /* border: 4px purple solid; */
+}
+
+.interst_div {
+    grid-area:interests;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 1px black solid;
+}
+
+.about_div {
+    grid-area:about;
+    padding-left: 25px;
+    /* border: 4px orange solid; */
+}
+
+.contact_div {
+    grid-area:contact;
+    padding-left: 25px;
+    /* border: 4px orangered solid; */
+}

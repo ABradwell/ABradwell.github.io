@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name = "Generic Project" content = "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CSS/masterStyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="CSS/responsive_header.css">
+    <link rel="stylesheet" type="text/css" href="CSS/gallery.css">
+    <link rel="stylesheet" type="text/css" href="CSS/about.css">
+
+    <script src="JS/image_gallery.js" type="text/javascript"></script>
+
+    <title>Aiden Stevenson Bradwell</title>
+
+</head>
+
+<div class="header">
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Aiden Stevenson Bradwell</a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a href="resumes.html" class="nav-link">Resumes</a>
+            </li>
+            <li class="nav-item">
+                <a href="WorkExperience.html" class="nav-link">Work Experience</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="education.html" class="nav-link">Education</a>
+            </li>
+            <li class="nav-item">
+                <a href="projects.html" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="articles.html" class="nav-link">Articles</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+</div>
+
+<body >
+    <br><br>
+    <div class="main_layout">
+        <div class="about_pic_div"> <img class="about_pic" src="Resources/Images/profile.png" alt="Image located here"/></div>
+        <div class="name_div">
+            <h1>Aiden Stevenson Bradwell</h1>
+        </div>
+        <div class="degree_div" >
+            <h4>Bsc Major in Computer Science, Major in Psychology</h4>
+            <p><i>University of Ottawa, Ottawa, Ontario</i><br>September 2018 - Janurary 2023</p>
+        </div>
+        <div class="interst_div">
+            <h2>Interests:</h2>
+            <t>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Neural Networks</li>
+                            <li>Simulation</li>
+                            <li>Embedded Programming</li>
+                            <li>Team Management</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Project Planning//Management</li>
+                            <li>Image Processing</li>
+                            <li>Environmental Studies</li>
+                            <li>Music</li>
+                        </ul>
+                    </td>
+                </tr>
+            </t>
+        </div>
+        <div class="about_div">
+            <h2>About Myself:</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut lectus dignissim, 
+                elementum nulla consectetur, tempus mauris. Integer mi purus, consequat vel convallis 
+                id, auctor eu risus. Maecenas vehicula sed diam sed cursus. Sed posuere urna sit 
+                amet metus rhoncus, vel pharetra enim interdum. Mauris nec pharetra nulla, vitae 
+                dignissim diam. Etiam ut pellentesque urna. Pellentesque mattis ligula nisl, at 
+                consectetur dolor facilisis at. Mauris non ultrices leo. Praesent felis dolor, 
+                imperdiet eu efficitur ac, ultrices sit amet neque. Proin sed felis non enim sodales 
+                vehicula a at sapien. Fusce nec nibh libero. Cras ultrices, nisi et semper posuere, 
+                leo mi congue quam, a congue nisi quam non justo. Pellentesque libero tortor, 
+                sollicitudin et pretium a, sagittis nec mi. Aliquam vel lorem risus.<br>
+
+                Vivamus pellentesque ullamcorper turpis a mollis. Sed sed augue in diam viverra 
+                auctor vitae in lorem. Curabitur at aliquam mauris, sed accumsan urna. 
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia 
+                curae; Mauris commodo elementum egestas. Morbi mi purus, euismod in tempus sed, 
+                dapibus sit amet leo. Nulla odio nisl, congue sed consectetur posuere, posuere 
+                eget dolor. Aliquam sapien nibh, hendrerit non nulla ut, facilisis rutrum lectus. 
+                Quisque convallis lorem arcu, a pharetra tellus tincidunt nec. Quisque vel blandit 
+                augue. In in felis justo. Curabitur scelerisque vel erat a vestibulum. Aenean
+                ultrices malesuada est, vitae sodales mauris.</p>
+        </div>
+        <div class="contact_div">
+            <h2>Contact Information:</h2>
+            <p><b>Phone:</b> (226) 345-4191</p>
+            <p><b>Email:</b> Aidenbradwell@gmail.com</p>
+            <p><b>School Email:</b> abrad060@uottawa.ca</p>
+            <p><b>City of Origin:</b> Windsor, Ontario, Canada</p>
+            <p><b>City of Residence:</b> Ottawa, Ontario, Canada</p>
+            <br>
+            <br>
+        </div>
+    </div> 
+</body>
+<footer>
+    <br>
+    <br>
+    <br>
+    <hr>
+</footer>

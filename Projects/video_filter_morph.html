@@ -8,18 +8,10 @@
     <link rel="stylesheet" type="text/css" href="../CSS/gallery.css">
     <script src="../JS/image_gallery.js" type="text/javascript"></script>
 
-
-    <!--        <link rel="stylesheet" type="text/css" href="masterStyleSheet.css">-->
-    <title>Aiden Stevenson Bradwell</title>
+    <title>Video Morph</title>
 
 </head>
 
-<!--<header id="includedContent">-->
-
-<!--</header>-->
-<!--<script>-->
-<!--    $("#includedContent").load("/../responsive_header.html");-->
-<!--</script>-->
 <div class="header">
     <nav class="navbar">
         <a href="../index.html" class="nav-logo">Aiden Stevenson Bradwell</a>
@@ -72,8 +64,8 @@
     </script>
 </div>
 
-<div class="header_image" style="background-image: url('../Resources/Images/automated_creatures/background_dark_short.png');">
-    <h1 class="project_title"><b>Map Generation & Simple Creature</b></h1>
+<div class="header_image" style="background-color: rgb(20, 2, 99);">
+    <h1 class="project_title"><b>Live-Webcam Video Processing</b></h1>
 </div>
 
 <body class = "project_page">
@@ -83,14 +75,13 @@
             <h1 > Overview</h1>
             <p><b>Author:</b> Aiden Stevenson Bradwell</p>
             <p><b>Affiliation:</b> University of Ottawa</p>
-            <p><b>Date:</b> August 20th, 2018</p>
-            <p><b>Concepts Used:</b> Pygame, Interactive UI, Random Map Generation, Basic roaming AI, Underlying 2d Array</p>
-
+            <p><b>Date:</b> November 19th, 2021</p>
+            <p><b>Concepts Used:</b>Python3, OpenCV, Tkinkter, Webcam, Image Processing </p>
             <br><br>
             <h3>About Program:</h3>
-            <p>My first python project, involving an automated generation of a map & creatures to explore said map.<br>
-                Creatures have no brain, no drive, and simply maneuver around the map. Each map is randomly generated, 
-                with a weighted average to create land and body chunks. 
+            <p>Combining OpenCv, Numpy, and Tkinkter graphics, this program allows <br>
+                the user to add image-processing filters to an active queue. <br>
+                The resultant image is then displayed in a live feed for the user to see.  <br>
             </p>
         </div>
         <div class="image_section">
@@ -106,46 +97,65 @@
     <hr>
     <br><br>
     <div class="github_holder"> 
-        <a style="align-self: center;" target="_blank" href="https://github.com/ABradwell/Portfolio/tree/master/Map%20Generation%20and%20Simple%20Life"><img src="../Resources/GitHub-Emblem.png" width="250" height="125"></a>
+        <a style="align-self: center;" target="_blank" href="https://github.com/ABradwell/Webcam_OpenCv_morph"><img src="../Resources/GitHub-Emblem.png" width="250" height="125"></a>
     </div>
     <br><br>
     <hr>
     <br><br>
     <div class="data_holder_double ">
-        <div class = "info_section divc1">
-            <h1>Menu System</h1>
-            <p>Designed using click-fields hard coded into the graphics. 
-                Each click returns an (x,y) point which is then analyzed to determine 
-                if it was within a field. Each click leaves a crosshair on 
-                the background, to confirm that while the click did not activate 
-                the program, it was received. <br><br> The ratio determines the 
-                # of cubes placed on the screen, resulting in smaller cubes the 
-                higher larger the selected map.</p>
+        <div class = "info_section divb1">
+            <h1 >Graphical Interface </h1>
+            <p>The application includes a button bank, where each filter includes 3 options. The user is able to</p>
+            <ol> 
+                <li>Add a filter to of this kind queue</li> 
+                <li>Remove most recently added filter of this kind</li> 
+                <li>Remove all filters of this kind</li> 
+            </ol>
         </div>
 
-        <div class="info_section divc2">
-            <h1>Map Generation</h1>
-            <p>The map generator algorithm fills the map from left to right, 
-                using its knowledge of the surrounding map-pieces to create 
-                land masses, instead of a map of small and isolated slivers of 
-                land. This allows for the animal to traverse the land, and creates 
-                a more visually appealing map. <br><br> The map always fills 
-                the same window size, but adjusts the cube-size to fill 
-                with the requested number of pieces. The odds of placing a 
-                piece which is harmonious with its' surrounding pieces is 
-                significantly higher than the odds of it placing a non-homogenous 
-                piece.</p>
+        <div class="info_section divb2">
+            <h1>Reading & Displaying Webcam </h1>
+            <p>There exists two classes in this program, one for reading 
+                the webcam and one for displaying then filtered result.  
+
+                These two classes work in tandem, using threading in python. 
+                Both share a common frame-queue, where the VideoReader loads 
+                frames and VideoShower pulls them. The VideoShower then send 
+                the loaded frame into a FrameFilter class (initialized at program-launch) </p>
         </div>
     </div>
     <br><br>
-    <div class="data_holder_double ">
-        <div class = "info_section divc3">
-            <h1>Animal Spawning</h1>
-            <p>The program finally spawns a creature to roam the map, 
-                with the creature’s size being comparative to the map’s 
-                cube sizes. The creature is a random walker, staying on 
-                the land pieces and avoiding the water. It has a 
-                tendency to walk upwards. On to better things, I guess!</p>
+    <div class="data_holder_double">
+        <div class = "info_section divb3">
+            <h1>Filtering Image </h1>
+            <p>The FrameFilter class is a locally implemented queue class, which 
+                stores the filters for each frame to pass through. 
+                All possible filters are stored as functions within this 
+                class. These include... </p>
+                <ul>
+                    <li>Threshold</li>
+                    <li>Sharpen</li>
+                    <li>Emboss</li>
+                    <li>Edge detection (canny)</li>
+                    <li>Blur (Normal/Median/Gaussian)</li>
+                    <li>Lighten</li>
+                    <li>Darken</li>
+                </ul> 
+        </div>
+        <div class = "info_section divb4">
+            <h1>Adjusting Blur Settings </h1>
+            <p>here exists 8 radio-buttons, where the user can choose one of 5 
+                kernel sizes from...</p>
+            <ul>
+                <li>1</li>
+                <li>3</li>
+                <li>5</li>
+                <li>7</li>
+                <li>9</li>
+            </ul>     
+            <p> and 3 where the user can choose <b>Normal</b>, <b>Median</b>, or <b>Gaussian</b> blur methods <br><br>
+            <b> Intention is to add further adjustments for each filter </b> </p>
+            
         </div>
     </div>
     <br><br>
@@ -164,20 +174,10 @@
         //Start this baby up
         (function init() {
             images = [
-                "../Resources/Images/automated_creatures/menu.png",
-                "../Resources/Images/automated_creatures/map_arrows.png",
-                "../Resources/Images/automated_creatures/map_plain.png",
-                "../Resources/Images/automated_creatures/map_animal.png",
-                "../Resources/Images/automated_creatures/map_gen_1.gif",
-                "../Resources/Images/automated_creatures/map_gen_2.gif",
+            "../Resources/Images/video_morph/Animation.gif",
             ];
             captions = [
-                "Map-Size Main Menu",
-                "Generation occurs from top to bottom, left to right",
-                "Sample map after generation",
-                "Animal being spawned into system.",
-                "Map generation example one",
-                "Map generation example two",
+                "Program running demonstration.",
             ];
              //Set Initial Featured Image
             img.src = images[0];
