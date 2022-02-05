@@ -26,15 +26,14 @@
         display: grid;
         width: 95%;
         margin: 0 auto;
-        grid-template-columns: 21r, 1fr, 2fr;
+        grid-template-columns: 2fr, 1fr, 2fr;
         grid-template-rows: repeat(5, auto);
         grid-template-areas: 
         "title     title   title"
         "name      name    name"
-        "title1     .      title2"
-        "personal   .      professional"
-        ".          .      ."
-        "contact    .      interests"
+        "title1    vdiv    title2"
+        "personal  vdiv    professional"
+        "contact   vdiv    interests"
     }
 }   
 
