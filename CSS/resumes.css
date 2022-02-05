@@ -1,0 +1,85 @@
+
+
+.main_layout {
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, auto);
+    grid-template-areas: 
+    "title"
+    "name"
+    ".  "
+    "title1   "  
+    "personal  "
+    ".     "
+    "title2  "
+    "professional  "
+    "contact"
+    "interests"
+
+}
+
+/* For large displays */
+@media (min-width:1050px) {
+    .main_layout {
+        display: grid;
+        width: 95%;
+        margin: 0 auto;
+        grid-template-columns: 21r, 1fr, 2fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        "title     title   title"
+        "name      name    name"
+        "title1     .      title2"
+        "personal   .      professional"
+        ".          .      ."
+        "contact    .      interests"
+    }
+}   
+
+
+.title_div {
+    grid-area:title;
+    text-align: center;
+}
+.title1_div {
+    grid-area:title1;
+    text-align: center;
+}
+.title2_div {
+    grid-area:title2;
+    text-align: center;
+}
+.name_div {
+    grid-area:name;
+    text-align: center;
+}
+.degree_div {
+    grid-area:degree;
+    text-align: center;
+}
+.interst_div {
+    grid-area:interests;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 1px black solid;
+}
+
+.contact_div {
+    grid-area:contact;
+    padding-left: 25px;
+}
+.degree_div {
+    grid-area:degree;
+    text-align: center;
+    
+    /* border: 4px purple solid; */
+}
+
+.personal_div {
+    grid-area:personal;
+}
+.professional_div {
+    grid-area:professional;
+}
