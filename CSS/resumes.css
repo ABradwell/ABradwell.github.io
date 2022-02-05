@@ -4,39 +4,45 @@
     display: grid;
     width: 70%;
     margin: 0 auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(10, auto);
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: repeat(7, auto);
     grid-template-areas: 
-    "title"
-    "name"
-    ".  "
-    "title1   "  
-    "personal  "
-    ".     "
-    "title2  "
-    "professional  "
-    "contact"
-    "interests"
+    "title          title"
+    "name           name"
+    "title1         title1"  
+    "personal       personal"
+    "title2         title2"
+    "professional   professional"
+    "contact        interests"
 
 }
 
-/* For large displays */
+/* For large displays
 @media (min-width:1050px) {
     .main_layout {
         display: grid;
         width: 95%;
         margin: 0 auto;
-        grid-template-columns: 2fr, 1fr, 2fr;
+        grid-template-columns: 1fr, 1fr;
         grid-template-rows: repeat(5, auto);
         grid-template-areas: 
-        "title     title   title"
-        "name      name    name"
-        "title1    vdiv    title2"
-        "personal  vdiv    professional"
-        "contact   vdiv    interests"
+        "title      title"
+        "name       name"
+        "title1     title2"
+        "personal   professional"
+        "contact    interests"
     }
-}   
+}    */
 
+
+.vdiv2_div {
+    min-height: 75px;
+    grid-area:vdiv1;
+}
+.vdiv1_div {
+    min-height: 75px;
+    grid-area:vdiv2;
+}
 
 .title_div {
     grid-area:title;
@@ -44,11 +50,11 @@
 }
 .title1_div {
     grid-area:title1;
-    text-align: center;
+    text-align: left;
 }
 .title2_div {
     grid-area:title2;
-    text-align: center;
+    text-align: left;
 }
 .name_div {
     grid-area:name;
