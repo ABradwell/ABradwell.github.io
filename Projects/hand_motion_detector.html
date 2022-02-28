@@ -72,8 +72,8 @@
     </script>
 </div>
 
-<div class="header_image" style="background-image: url('../Resources/Images/automated_creatures/background_dark_short.png');">
-    <h1 class="project_title"><b>Map Generation & Simple Creature</b></h1>
+<div class="header_image" style="background-image: url('../Resources/Images/hand_tracking/background.png');">
+    <h1 class="project_title"><b>Python Live HandTracker</b></h1>
 </div>
 
 <body class = "project_page">
@@ -104,40 +104,53 @@
     <hr>
     <br><br>
     <div class="github_holder"> 
-        <a style="align-self: center;" target="_blank" href="https://github.com/ABradwell/Portfolio/tree/master/Map%20Generation%20and%20Simple%20Life"><img src="../Resources/GitHub-Emblem.png" width="250" height="125"></a>
+        <a style="align-self: center;" target="_blank" href="https://github.com/ABradwell/Hand_Tracking"><img src="../Resources/GitHub-Emblem.png" width="250" height="125"></a>
     </div>
     <br><br>
     <hr>
     <br><br>
     <div class="data_holder_double ">
         <div class = "info_section divc1">
-            <h1></h1>
-            <p></p>
+            <h1>External Recognition</h1>
+            <p>External Code for preparing the program take from https://techvidvan.com/tutorials/hand-gesture-recognition-tensorflow-opencv/ 
+                <br>Provided pretrained hand-recognition TensorFlow network, implemented through Google Mediapipe 
+                <br>From this tutorial, the pretrained network was taken. 
+                <br><br>No author information nor git information provided.
+                </p>
         </div>
 
         <div class="info_section divc2">
-            <h1>Map Generation</h1>
-            <p>The map generator algorithm fills the map from left to right, 
-                using its knowledge of the surrounding map-pieces to create 
-                land masses, instead of a map of small and isolated slivers of 
-                land. This allows for the animal to traverse the land, and creates 
-                a more visually appealing map. <br><br> The map always fills 
-                the same window size, but adjusts the cube-size to fill 
-                with the requested number of pieces. The odds of placing a 
-                piece which is harmonious with its' surrounding pieces is 
-                significantly higher than the odds of it placing a non-homogenous 
-                piece.</p>
+            <h1>Hand Detection</h1>
+            <p>Hand detection is executed using Google Mediapipe, with the pretrained hand-skeleton detection network. <br><br>
+                From this skeleton, a box is drawn around the user’s hand and displayed on the screen. </p>
         </div>
     </div>
     <br><br>
     <div class="data_holder_double ">
         <div class = "info_section divc3">
-            <h1>Animal Spawning</h1>
-            <p>The program finally spawns a creature to roam the map, 
-                with the creature’s size being comparative to the map’s 
-                cube sizes. The creature is a random walker, staying on 
-                the land pieces and avoiding the water. It has a 
-                tendency to walk upwards. On to better things, I guess!</p>
+            <h1>Motion Tracking</h1>
+            <p>As the hands more, the palm of the hand is measured and recorded. 
+                As the last 50 points are displayed on the screen, a post process 
+                filters connected points only. If two points are too far apart 
+                (which occurs when the hands become swapped or another hand appears abruptly), 
+                a line is not draw. This provides a cleaner output of motion tracking 
+                for a maximum of two hands. </p>
+        </div>
+
+        <div class="info_section divc4">
+            <h1>Algorithm</h1>
+            <p>1. Input video and output video handlers<br>
+                2. Initialize 2 empty lists, to store previous hand-positions<br>
+                3. For each frame grabbed:<br>
+                &nbsp;4. Convert frame to RBG<br>
+                &nbsp;5. Using pretrained hand-detection mp_hand_gesture, detect hands in frame<br>
+                &nbsp;6. Detect palm of hand, and add to appropriate hand-list<br>
+                &nbsp;7. Add point to curve of detected hand<br>
+                &nbsp;8. Draw curve of previous palm-locations<br>
+                &nbsp;&nbsp;9. Limit size of these lists to 75 data-points per hand<br>
+                &nbsp;&nbsp;10. Two points are considered sequential if they are within 75px of each other<br>
+                &nbsp;11. Display and Save Frame for output<br>
+                </p>
         </div>
     </div>
     <br><br>
@@ -156,20 +169,13 @@
         //Start this baby up
         (function init() {
             images = [
-                "../Resources/Images/automated_creatures/menu.png",
-                "../Resources/Images/automated_creatures/map_arrows.png",
-                "../Resources/Images/automated_creatures/map_plain.png",
-                "../Resources/Images/automated_creatures/map_animal.png",
-                "../Resources/Images/automated_creatures/map_gen_1.gif",
-                "../Resources/Images/automated_creatures/map_gen_2.gif",
+                "../Resources/Images/hand_tracking/partB_example.gif",
+                "../Resources/Images/hand_tracking/result.gif",
+                
             ];
             captions = [
-                "Map-Size Main Menu",
-                "Generation occurs from top to bottom, left to right",
-                "Sample map after generation",
-                "Animal being spawned into system.",
-                "Map generation example one",
-                "Map generation example two",
+                "Runtime Example Live Version",
+                "Runtime Example File-read Version",
             ];
              //Set Initial Featured Image
             img.src = images[0];
